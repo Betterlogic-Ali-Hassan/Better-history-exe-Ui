@@ -3,7 +3,7 @@ import { Card } from "@/types/CardTypes";
 export const getCategoryCounts = (cards: Card[]) => {
   const counts: { [key: string]: number } = {};
   cards.forEach((card) => {
-    card.tags.forEach((category) => {
+    card.tags?.forEach((category) => {
       counts[category.id] = (counts[category.id] || 0) + 1;
     });
   });
@@ -21,6 +21,6 @@ export const filterCardsByCategory = (cards: Card[], selectedCategories: string[
       return [...cards]; 
     }
     return cards.filter((card) =>
-      card.tags.some((tag) => selectedCategories.includes(tag.id))
+      card.tags?.some((tag) => selectedCategories.includes(tag.id))
     );
   };

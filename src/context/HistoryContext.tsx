@@ -26,13 +26,11 @@ type HistoryContextType = {
   selectedCategories: string[];
   pinCategories: string[];
   searchTerm: string;
-  showCardDetail: boolean;
   showSelectionCard: boolean;
   setSelectedCards: (cards: number[]) => void;
-  toggleCard: (id: number, url: string) => void;
+  toggleCard: (id: number, url?: string) => void;
   toggleCategory: (categoryId: string) => void;
   setSearchTerm: (term: string) => void;
-  setShowCardDetail: (show: boolean) => void;
   setShowSelectionCard: (show: boolean) => void;
   selectAll: () => void;
   clearSelection: () => void;
@@ -40,13 +38,10 @@ type HistoryContextType = {
   setPinCategories: (categories: string[]) => void;
   setCards: (cards: Card[]) => void;
   filteredCards: Card[];
-  addCard: (card: Card) => void;
   deleteCard: (id: number | number[]) => void;
   updateCard: (updatedCard: Card) => void;
   categories: Tag[];
   setCategories: (categories: Tag[]) => void;
-  activeTab: number;
-  setActiveTab: (tab: number) => void;
 };
 
 const HistoryContext = createContext<HistoryContextType | undefined>(undefined);
@@ -117,10 +112,8 @@ export const HistoryProvider = ({ children }: { children: ReactNode }) => {
     getFromStorage(pinCategoriesKey, [])
   );
 
-  const [activeTab, setActiveTab] = useState(0);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [showCardDetail, setShowCardDetail] = useState(false);
   const [selectedCards, setSelectedCards] = useState<number[]>([]);
   const [showSelectionCard, setShowSelectionCard] = useState(false);
   const [selectedCardUrls, setSelectedCardUrls] = useState<string[]>([]);
@@ -131,7 +124,6 @@ export const HistoryProvider = ({ children }: { children: ReactNode }) => {
     setSelectedCategories([]);
     setSelectedCards([]);
     setSelectedCardUrls([]);
-    setShowCardDetail(false);
     setShowSelectionCard(false);
   }, []);
 
@@ -190,16 +182,16 @@ export const HistoryProvider = ({ children }: { children: ReactNode }) => {
   );
 
   // Card selection functions
-  const toggleCard = useCallback((id: number, url: string) => {
+  const toggleCard = useCallback((id: number, url?: string) => {
     setSelectedCards((prev) =>
       prev.includes(id) ? prev.filter((cardId) => cardId !== id) : [...prev, id]
     );
-
-    setSelectedCardUrls((prev) =>
-      prev.includes(url)
-        ? prev.filter((cardUrl) => cardUrl !== url)
-        : [...prev, url]
-    );
+    if (url)
+      setSelectedCardUrls((prev) =>
+        prev.includes(url)
+          ? prev.filter((cardUrl) => cardUrl !== url)
+          : [...prev, url]
+      );
   }, []);
 
   const selectAll = useCallback(() => {
@@ -220,11 +212,6 @@ export const HistoryProvider = ({ children }: { children: ReactNode }) => {
         ? prev.filter((id) => id !== category)
         : [...prev, category]
     );
-  }, []);
-
-  // CRUD operations for cards
-  const addCard = useCallback((card: Card) => {
-    setCards((prev) => [card, ...prev]);
   }, []);
 
   const deleteCard = useCallback((ids: number | number[]) => {
@@ -248,26 +235,21 @@ export const HistoryProvider = ({ children }: { children: ReactNode }) => {
       selectedCategories,
       pinCategories,
       searchTerm,
-      showCardDetail,
       showSelectionCard,
-      activeTab,
       categories,
       setSelectedCards,
       toggleCard,
       toggleCategory,
       setSearchTerm,
-      setShowCardDetail,
       setShowSelectionCard,
       selectAll,
       clearSelection,
       setSelectedCategories,
       setPinCategories,
       setCards,
-      addCard,
       deleteCard,
       updateCard,
       setCategories,
-      setActiveTab,
     }),
     [
       filteredCards,
@@ -277,15 +259,12 @@ export const HistoryProvider = ({ children }: { children: ReactNode }) => {
       selectedCategories,
       pinCategories,
       searchTerm,
-      showCardDetail,
       showSelectionCard,
-      activeTab,
       categories,
       toggleCard,
       toggleCategory,
       selectAll,
       clearSelection,
-      addCard,
       deleteCard,
       updateCard,
     ]
