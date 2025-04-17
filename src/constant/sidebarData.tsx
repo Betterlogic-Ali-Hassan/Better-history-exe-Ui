@@ -31,7 +31,7 @@ export const sidebarDataBottom = [
   {
     icon: <DocumentationIcon />,
     tooltip: "Documentation",
-    link: "grid",
+    link: "blackList",
   },
   {
     icon: <ExistIcon />,

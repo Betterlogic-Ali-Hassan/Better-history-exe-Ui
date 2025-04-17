@@ -8,28 +8,33 @@ import SearchEnginePage from "./pages/SearchEnginePage";
 import ActivityPage from "./pages/ActivityPage";
 import { SearchContextProvider } from "./context/SearchFilterContext";
 import { HistoryProvider } from "./context/HistoryContext";
+import BlacklistDomainPage from "./pages/BlacklistDomainPage";
+import { BlackListContextProvider } from "./context/BlackListContext";
 
 const App = () => {
   const { page, dialogOpen } = usePageContext();
   return (
     <ThemeDropDownContextProvider>
       <HistoryProvider>
-        <HeaderProvider>
-          <SearchContextProvider>
-            <DateProvider>
-              {page === "activity" && <ActivityPage />}
-              {page === "downloads" && <DownloadPage />}
-              {page === "search" && <SearchEnginePage />}
-              {page === "device" && <DevicePage />}
-              {dialogOpen && (
-                <div
-                  className='fixed inset-0 bg-black/50  '
-                  style={{ zIndex: 50 }}
-                ></div>
-              )}
-            </DateProvider>
-          </SearchContextProvider>
-        </HeaderProvider>
+        <BlackListContextProvider>
+          <HeaderProvider>
+            <SearchContextProvider>
+              <DateProvider>
+                {page === "activity" && <ActivityPage />}
+                {page === "downloads" && <DownloadPage />}
+                {page === "search" && <SearchEnginePage />}
+                {page === "device" && <DevicePage />}
+                {page === "blackList" && <BlacklistDomainPage />}
+                {dialogOpen && (
+                  <div
+                    className='fixed inset-0 bg-black/50  '
+                    style={{ zIndex: 50 }}
+                  ></div>
+                )}
+              </DateProvider>
+            </SearchContextProvider>
+          </HeaderProvider>
+        </BlackListContextProvider>
       </HistoryProvider>
     </ThemeDropDownContextProvider>
   );
