@@ -20,7 +20,7 @@ const ThemeCard = ({
     <div onClick={handleSetTheme} data-theme={theme}>
       <button
         className={cn(
-          "bg-background text-foreground p-6 rounded-[14px]  border-transparent relative flex flex-col hover:bg-hover transition duration-200  border-4 w-[200px] max-h-[200px] ",
+          "bg-background text-foreground p-6 rounded-[14px] cursor-pointer border-transparent relative flex flex-col hover:bg-hover transition duration-200  border-4 w-[200px] max-h-[200px] ",
           isSelected && " border-brand "
         )}
       >

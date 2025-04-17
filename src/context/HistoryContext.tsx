@@ -17,7 +17,7 @@ import { activityData } from "@/constant/ActivityData";
 import type { Tag } from "@/types/tag";
 import { Card } from "@/types/CardTypes";
 import { categoriesData } from "@/constant/categories";
-import { devicesData } from "@/constant/devicesData";
+import { deviceData } from "@/constant/deviceData";
 
 type HistoryContextType = {
   cards: Card[];
@@ -61,7 +61,7 @@ const PIN_CATEGORIES_KEYS = {
 const DEFAULT_DATA = {
   downloads: downloadData,
   activity: activityData,
-  device: devicesData,
+  device: deviceData,
 };
 
 export const HistoryProvider = ({ children }: { children: ReactNode }) => {
