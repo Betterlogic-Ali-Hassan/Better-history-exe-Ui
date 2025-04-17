@@ -1,23 +1,22 @@
 import { DateProvider } from "./context/DateContext";
 import { HeaderProvider } from "./context/HeaderContext";
-import { HistoryProvider } from "./context/HistoryContext";
 import { usePageContext } from "./context/PageContext";
-
 import { ThemeDropDownContextProvider } from "./context/ThemeDropDownContext";
 import DevicePage from "./pages/DevicePage";
 import DownloadPage from "./pages/DownloadPage";
 import SearchEnginePage from "./pages/SearchEnginePage";
 import ActivityPage from "./pages/ActivityPage";
 import { SearchContextProvider } from "./context/SearchFilterContext";
+import { HistoryProvider } from "./context/HistoryContext";
 
 const App = () => {
   const { page, dialogOpen } = usePageContext();
   return (
     <ThemeDropDownContextProvider>
-      <HeaderProvider>
-        <SearchContextProvider>
-          <DateProvider>
-            <HistoryProvider>
+      <HistoryProvider>
+        <HeaderProvider>
+          <SearchContextProvider>
+            <DateProvider>
               {page === "activity" && <ActivityPage />}
               {page === "downloads" && <DownloadPage />}
               {page === "search" && <SearchEnginePage />}
@@ -28,10 +27,10 @@ const App = () => {
                   style={{ zIndex: 50 }}
                 ></div>
               )}
-            </HistoryProvider>
-          </DateProvider>
-        </SearchContextProvider>
-      </HeaderProvider>
+            </DateProvider>
+          </SearchContextProvider>
+        </HeaderProvider>
+      </HistoryProvider>
     </ThemeDropDownContextProvider>
   );
 };

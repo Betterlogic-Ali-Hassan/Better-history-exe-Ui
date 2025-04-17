@@ -116,12 +116,8 @@ export default function CardGroup({
         )}
         {isDevicePage && <Results />}
         <div className={containerClasses} ref={groupRef}>
-          {cards.map((card) => (
-            <CardRenderer
-              key={card.id}
-              isDownloadPage={isDownloadPage}
-              data={card}
-            />
+          {cards.map((card, i) => (
+            <CardRenderer key={i} isDownloadPage={isDownloadPage} data={card} />
           ))}
         </div>
       </div>

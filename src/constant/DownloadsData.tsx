@@ -10,7 +10,7 @@ export const downloadData = [
   {
     id: 2,
     icon: "/file-pdf.png",
-    title: "Color Palette Generator",
+    title: "Color Palette Generator?",
     path: "https://coolors.co/",
     des: "Convert written text into spoken words.",
     tags: [{ id: "pdfs", name: "PDFs" }],

@@ -18,6 +18,7 @@ import type { Tag } from "@/types/tag";
 import { Card } from "@/types/CardTypes";
 import { categoriesData } from "@/constant/categories";
 import { deviceData } from "@/constant/deviceData";
+import { filterCards } from "@/lib/search-filter";
 
 type HistoryContextType = {
   cards: Card[];
@@ -161,25 +162,9 @@ export const HistoryProvider = ({ children }: { children: ReactNode }) => {
     setToStorage(pinCategoriesKey, pinCategories);
   }, [pinCategories, pinCategoriesKey, setToStorage]);
 
-  const filteredCards = useMemo(
-    () =>
-      cards.filter((card) => {
-        const matchesSearch = card.title
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
-
-        if (selectedCategories.length === 0) {
-          return matchesSearch;
-        }
-
-        const hasSelectedCategory =
-          card.tags &&
-          card.tags.some((tag) => selectedCategories.includes(tag.id));
-
-        return matchesSearch && hasSelectedCategory;
-      }),
-    [cards, searchTerm, selectedCategories]
-  );
+  const filteredCards = useMemo(() => {
+    return filterCards(cards, searchTerm, selectedCategories);
+  }, [cards, searchTerm, selectedCategories]);
 
   // Card selection functions
   const toggleCard = useCallback((id: number, url?: string) => {
