@@ -2,7 +2,7 @@ export const downloadData = [
   {
     id: 1,
     icon: "/file-pdf.png",
-    title: "QR Code Generator",
+    title: "qr code generator",
     path: "https://high-qr-code-generator.com/",
     des: "Convert written text into spoken words.",
     tags: [{ id: "pdfs", name: "PDFs" }],
@@ -10,7 +10,7 @@ export const downloadData = [
   {
     id: 2,
     icon: "/file-pdf.png",
-    title: "Color Palette Generator?",
+    title: "COLOR PALLET GENERATOR?",
     path: "https://coolors.co/",
     des: "Convert written text into spoken words.",
     tags: [{ id: "pdfs", name: "PDFs" }],

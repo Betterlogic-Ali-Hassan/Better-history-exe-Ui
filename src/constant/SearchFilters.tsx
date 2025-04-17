@@ -10,11 +10,11 @@ export const filters = [
 
   {
     label: "Contains Numbers",
-    value: "numbers",
+    value: "/d+/",
   },
   {
     label: "All Capital Letters",
-    value: "capital letters",
+    value: "/[A-Z]+/",
   },
   {
     label: "10 or More Characters",
@@ -34,7 +34,7 @@ export const filters = [
   },
   {
     label: 'Ends with "?"',
-    value: "question",
+    value: "?",
   },
   {
     label: 'Contains "TODO"',

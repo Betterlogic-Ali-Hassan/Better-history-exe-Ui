@@ -2,14 +2,20 @@
 
 import { useHeaderContext } from "@/context/HeaderContext";
 import ActionBtn from "./ActionBtn";
+import { cn } from "@/lib/utils";
 
-const ActionsBtns = () => {
+const ActionsBtns = ({ withoutDate }: { withoutDate?: boolean }) => {
   const { currentHeader } = useHeaderContext();
   console.log(currentHeader);
 
   return (
     <div className='w-full flex items-center justify-between my-4 flex-wrap gap-4 '>
-      <p className='text-lg font-bold text-text'>
+      <p
+        className={cn(
+          "text-lg font-bold text-text",
+          withoutDate && "opacity-0 pointer-events-none"
+        )}
+      >
         {currentHeader.date} {currentHeader.time}
       </p>
       <div className='flex items-center gap-4 flex-wrap'>

@@ -5,10 +5,13 @@ import TopNav from "./TopNav";
 import SearchFilters from "../searchEnginePage/SearchFilters";
 import Devices from "../devicePage/Devices";
 import Activity from "../activityPage/Activity";
+import ActionsBtns from "../activityPage/ActionsBtns";
+import { useSearch } from "@/context/SearchFilterContext";
 
 const TopBar = () => {
   const { page } = usePageContext();
   const { categories } = useHistory();
+  const { searchActive } = useSearch();
 
   return (
     <>
@@ -16,7 +19,10 @@ const TopBar = () => {
       {page === "activity" ? (
         <Activity />
       ) : page === "search" ? (
-        <SearchFilters />
+        <div>
+          <SearchFilters />
+          {searchActive && <ActionsBtns withoutDate={true} />}
+        </div>
       ) : page === "device" ? (
         <Devices />
       ) : (

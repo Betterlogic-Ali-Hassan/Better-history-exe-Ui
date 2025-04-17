@@ -38,12 +38,14 @@ export const filterCards = (
         );
       }
       // Check for number-only search (\d+)
-      else if (searchTerm === "\\d+") {
-        searchMatch = /^\d+$/.test(card.title) || /^\d+$/.test(card.path);
+      else if (searchTerm === "/d+/") {
+        searchMatch = /\d/.test(card.title) || /\d/.test(card.path);
       } else if (searchTerm === "?") {
         searchMatch =
           card.title.toLowerCase().endsWith("?") ||
           card.path.toLowerCase().endsWith("?");
+      } else if (searchTerm === "/[A-Z]+/") {
+        searchMatch = /[A-Z]/.test(card.title) || /[A-Z]/.test(card.path);
       }
       // Default case-insensitive contains search
       else {

@@ -1,8 +1,13 @@
 import { filters } from "@/constant/SearchFilters";
 import Button from "../ui/Button";
 import { useRef, useState } from "react";
+import { useSearch } from "@/context/SearchFilterContext";
+import { useHistory } from "@/context/HistoryContext";
 
 const SearchFilters = () => {
+  const { setSearchActive } = useSearch();
+  const { setSearchTerm } = useHistory();
+
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -25,6 +30,10 @@ const SearchFilters = () => {
     const walk = (x - startX) * 1; // scroll speed
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
+  const handleFilters = (value: string) => {
+    setSearchActive(true);
+    setSearchTerm(value);
+  };
   return (
     <div
       className='overflow-x-auto flex  no-scrollbar custom-scroll  my-2'
@@ -36,6 +45,7 @@ const SearchFilters = () => {
     >
       {filters.map((filter, index) => (
         <Button
+          onClick={() => handleFilters(filter.value)}
           className='h-8 px-4 py-0.5 mr-2 rounded-[20px] bg-brand text-text-primary hover:bg-brand-hover ring-0 relative group'
           key={index}
         >
