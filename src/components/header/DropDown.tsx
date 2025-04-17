@@ -28,7 +28,7 @@ const DropDown = () => {
   }, []);
 
   const pageTitles: Record<string, string> = {
-    history: "History",
+    activity: "Activities",
     downloads: "Downloads",
     search: "",
     device: "Devices",
