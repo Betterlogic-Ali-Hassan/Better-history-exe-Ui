@@ -6,11 +6,13 @@ import { usePageContext } from "@/context/PageContext";
 import Activity from "@/svgs/Activity";
 import Devices from "@/svgs/Devices";
 import SearchEngineIcon from "@/svgs/SearchEngineIcon";
+import LinkSlash from "@/svgs/LinkSlash";
 const iconsMap: Record<string, JSX.Element> = {
   search: <SearchEngineIcon className='h-[28px] w-[28px]' />,
   activity: <Activity className='h-[28px] w-[28px]' />,
   downloads: <DownloadIcon className='h-[28px] w-[28px]' />,
   device: <Devices className='h-[28px] w-[28px]' />,
+  blacklist: <LinkSlash className='h-[28px] w-[28px]' />,
 };
 const Header = () => {
   const { page } = usePageContext();

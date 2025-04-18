@@ -4,6 +4,7 @@ import DownloadIcon from "@/svgs/DownloadIcon";
 import Activity from "@/svgs/Activity";
 import Devices from "@/svgs/Devices";
 import SearchEngineIcon from "@/svgs/SearchEngineIcon";
+import LinkSlash from "@/svgs/LinkSlash";
 
 export const sidebarData = [
   {
@@ -26,12 +27,17 @@ export const sidebarData = [
     tooltip: "Downloads",
     link: "downloads",
   },
+  {
+    icon: <LinkSlash />,
+    tooltip: "Blacklist Domain",
+    link: "blackList",
+  },
 ];
 export const sidebarDataBottom = [
   {
     icon: <DocumentationIcon />,
     tooltip: "Documentation",
-    link: "blackList",
+    link: "document",
   },
   {
     icon: <ExistIcon />,
