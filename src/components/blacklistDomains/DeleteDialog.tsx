@@ -30,7 +30,7 @@ const DeleteDialog = () => {
               <AlertTriangle className='h-4 w-4' />
               Confirm Deletion
             </DialogTitle>
-            <DialogDescription className='text-sm  max-w-[370px] text-foreground transition-colors duration-300 ease-in-out'>
+            <DialogDescription className='text-sm  max-w-[370px] text-text transition-colors duration-300 ease-in-out'>
               {bulkDeleteMode
                 ? selectedDomains.length > 0
                   ? `Are you sure you want to delete ${

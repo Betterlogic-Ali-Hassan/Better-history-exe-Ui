@@ -118,7 +118,7 @@
   --background-color: #000;
   --card-color: #171c1f;
   --error-color: #dc2626;
-  --error-light-color: #fee2e2;
+  --error-light-color: #171c1f;
   --text-color: #ffff;
   --text-foreground: #d4d4d4;
   --info-alert-color: #171c1f;
@@ -148,6 +148,7 @@
   --selected-hover-bg: rgba(0, 121, 211, 0.15); /* Blue selection hover */
   --selected-bg: rgba(0, 121, 211, 0.1); /* Light selection background */
   --selected-border: #0079d3; /* Strong selection border */
+  --warn-color: #977807c0;
 }
 
 [data-theme="sunrise"] {

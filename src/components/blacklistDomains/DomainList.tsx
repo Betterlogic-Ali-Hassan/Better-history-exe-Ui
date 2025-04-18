@@ -64,7 +64,7 @@ export function DomainList({ allSelected }: { allSelected: boolean }) {
             <div className='flex flex-wrap items-center gap-1.5  pr-8'>
               <span className='truncate text-sm font-medium text-text  max-w-[135px] sm:max-w-[150px] '>
                 {domain.isRegex ? (
-                  <code className='bg-purple-50 dark:bg-purple-950 px-1 py-0.5 rounded text-purple-800 dark:text-purple-300 font-mono transition-colors duration-300 ease-in-out'>
+                  <code className='bg-badge  px-1 py-0.5 rounded text-text  font-mono transition-colors duration-300 ease-in-out'>
                     {domain.domain}
                   </code>
                 ) : (
@@ -72,7 +72,7 @@ export function DomainList({ allSelected }: { allSelected: boolean }) {
                 )}
               </span>
               {domain.blockType === "specific-path" && domain.pathPattern && (
-                <div className='bg-warn  text-[10px] py-0 h-5 flex items-center rounded-full px-1.5 transition-colors duration-300 ease-in-out'>
+                <div className='bg-warn text-text text-[10px] py-0 h-5 flex items-center rounded-full px-1.5 transition-colors duration-300 ease-in-out'>
                   Path: {domain.pathPattern}
                 </div>
               )}
