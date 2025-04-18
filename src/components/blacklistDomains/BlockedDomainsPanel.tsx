@@ -71,19 +71,19 @@ const BlockedDomainsPanel = () => {
       <div className='flex-1'>
         <label
           htmlFor='domain-input'
-          className='text-xs font-medium mb-1  text-slate-700 dark:text-slate-300 flex items-center gap-1 transition-colors duration-300 ease-in-out'
+          className='text-[15px] font-medium mb-2  text-text flex items-center gap-1 transition-colors duration-300 ease-in-out'
         >
           Domain
           <span
             data-tooltip-id='info2-tooltip'
             data-tooltip-content={` Enter a domain name (e.g., example.com) or a regex pattern (e.g., /.*.example.com/)`}
           >
-            <Info className='h-5 w-5 ' />
+            <Info className='h-[17px] w-[17px] ' />
           </span>
           <Tooltip
             id='info2-tooltip'
             className='bg-text  text-card  '
-            place='right'
+            place='top'
           />
         </label>
         <input
@@ -94,16 +94,16 @@ const BlockedDomainsPanel = () => {
             setNewDomain(e.target.value);
             validateDomain(e.target.value);
           }}
-          className={`w-full h-8 text-sm input ${
+          className={`w-full h-10 rounded text-sm input ${
             newDomain.startsWith("/") ? "font-mono" : ""
           }`}
         />
       </div>
       {blockType === "specific-path" && (
-        <div className='flex-1'>
+        <div className='flex-1 mt-2'>
           <label
             htmlFor='path-input'
-            className='text-xs font-medium mb-1 block text-slate-700 dark:text-slate-300 transition-colors duration-300 ease-in-out'
+            className='text-sm font-medium mb-1 block text-text transition-colors duration-300 ease-in-out'
           >
             Path Pattern
           </label>
@@ -112,14 +112,14 @@ const BlockedDomainsPanel = () => {
             placeholder='/maps/*'
             value={pathPattern}
             onChange={(e) => setPathPattern(e.target.value)}
-            className='w-full h-8 input'
+            className='w-full h-10 input rounded '
           />
         </div>
       )}
       <div className='self-end flex gap-2'>
         <Button
           onClick={handleAddDomain}
-          className='whitespace-nowrap  transition-colors duration-300 ease-in-out'
+          className='whitespace-nowrap h-10 transition-colors  disabled:opacity-70 disabled:hover:bg-card duration-300 ease-in-out'
           disabled={
             !isValidDomain || (blockType === "specific-path" && !pathPattern)
           }

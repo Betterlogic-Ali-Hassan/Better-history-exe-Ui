@@ -5,11 +5,11 @@ import { useBlackList } from "@/context/BlackListContext";
 const SuccessMessage = () => {
   const { showSuccess } = useBlackList();
   return (
-    <div>
+    <>
       {showSuccess && (
         <div>
-          <Alert className='bg-green-50 dark:bg-green-950 text-green-800 dark:text-green-300 border-green-200 dark:border-green-900 py-2 transition-colors duration-300 ease-in-out'>
-            <Check className='h-3 w-3' />
+          <Alert className='bg-success  text-success-text  border-success-border mt-4 rounded py-2 transition-colors duration-300 ease-in-out'>
+            <Check className='h-4 w-4' />
             <AlertTitle className='text-sm'>Success</AlertTitle>
             <AlertDescription className='text-xs'>
               Domain successfully added to blacklist
@@ -17,7 +17,7 @@ const SuccessMessage = () => {
           </Alert>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

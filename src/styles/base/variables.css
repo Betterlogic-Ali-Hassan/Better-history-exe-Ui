@@ -19,15 +19,15 @@
   --color-hover: var(--hover-color);
   --color-error: var(--error-color);
   --color-success: var(--success-color);
+  --color-success-text: var(--success-text);
+  --color-success-border: var(--success-border);
   --color-btn-hover: var(--btn-hover);
   --color-sidebar-hover: var(--sidebar-hover);
   --color-brand-hover: var(--brand-hover);
   --color-selected-hover: var(--selected-hover-bg);
   --color-selected-bg: var(--selected-bg);
   --color-selected-border: var(--selected-border);
-  --color-warn-border: var(--warn-border);
-  --color-warn-color: var(--warn-color);
-  --color-warn-text: var(--warn-text);
+  --color-warn: var(--warn-color);
   --color-home-sidebar-hover: var(--home-sidebar-hover);
   --color-cancel-btn: var(--cancel-btn);
   --color-date-card: var(--date-card-color);
@@ -45,6 +45,7 @@
   --color-sidebar-selected: var(--sidebar-selected-color);
   --color-switch-enabled-bg: var(--switch-enabled-bg-color);
   --color-switch-disabled-bg: var(--switch-disabled-bg-color);
+  --color-info: var(--info-alert-color);
 }
 
 :root {
@@ -99,8 +100,17 @@
 
   --switch-enabled-bg-color: #000;
   --switch-disabled-bg-color: #dae0e6;
+
+  --info-alert-color: #eef6ff;
+  --warn-color: #ffe585;
+  --success-color: #f0fdf4;
+  --success-text: #016630;
+  --success-border: #b9f8cf;
 }
 [data-theme="dark"] {
+  --success-color: #032e15;
+  --success-text: #7bf1a8;
+  --success-border: #0d542b;
   --search-bar: #171c1f;
   --sidebar-bg-color: #0000;
   --text-primary: #fff; /* Primary text color */
@@ -111,6 +121,7 @@
   --error-light-color: #fee2e2;
   --text-color: #ffff;
   --text-foreground: #d4d4d4;
+  --info-alert-color: #171c1f;
   --btn-hover: #2a3236;
   --badge-color: #333d42;
   --switch-enabled-bg-color: #fff;

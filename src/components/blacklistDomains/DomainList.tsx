@@ -1,7 +1,8 @@
-import { Badge, Trash2 } from "lucide-react";
+import { Trash2 } from "lucide-react";
 import Button from "../ui/Button";
 import { useBlackList } from "@/context/BlackListContext";
 import { Checkbox } from "../ui/checkbox";
+import { cn } from "@/lib/utils";
 
 export function DomainList({ allSelected }: { allSelected: boolean }) {
   const {
@@ -13,7 +14,7 @@ export function DomainList({ allSelected }: { allSelected: boolean }) {
   } = useBlackList();
   if (domains.length === 0) {
     return (
-      <div className='text-center py-6 text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-900 rounded-lg border border-dashed border-slate-200 dark:border-slate-700 text-xs transition-colors duration-300 ease-in-out'>
+      <div className='text-center py-6 text-foreground  bg-background rounded-md border border-dashed border-border  text-sm transition-colors duration-300 ease-in-out'>
         No domains found
       </div>
     );
@@ -22,16 +23,16 @@ export function DomainList({ allSelected }: { allSelected: boolean }) {
   return (
     <div className='space-y-1.5'>
       <div className='flex items-center justify-between mb-1.5 px-2'>
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-2 mb-2'>
           <Checkbox
             id='select-all'
             checked={allSelected}
             onCheckedChange={toggleSelectAll}
-            className='h-3.5 w-3.5'
+            className='h-5 w-5 shadow-none border-border cursor-pointer'
           />
           <label
             htmlFor='select-all'
-            className='text-xs font-medium cursor-pointer dark:text-slate-300 transition-colors duration-300 ease-in-out'
+            className='text-sm  font-medium cursor-pointer text-text transition-colors duration-300 ease-in-out'
           >
             Select All
           </label>
@@ -47,21 +48,21 @@ export function DomainList({ allSelected }: { allSelected: boolean }) {
       {domains.map((domain) => (
         <div
           key={domain.id}
-          className={`flex items-center justify-between p-2 bg-white dark:bg-slate-950 rounded-lg border transition-colors duration-300 ease-in-out ${
-            selectedDomains.includes(domain.id)
-              ? "border-slate-400 dark:border-slate-500 bg-slate-50 dark:bg-slate-900"
-              : "border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-900"
-          }`}
+          className={cn(
+            "  border-transparent flex items-center h-14 lg:h-12 justify-between hover:bg-hover overflow-x-auto no-scrollbar select-none bg-card  w-full relative border  rounded-md group",
+            selectedDomains.includes(domain.id) &&
+              "hover:bg-selected-hover border-selected-border bg-selected-bg"
+          )}
         >
-          <div className='flex items-center gap-2'>
+          <div className='flex items-center gap-2 px-4'>
             <Checkbox
               id={`domain-${domain.id}`}
               checked={selectedDomains.includes(domain.id)}
               onCheckedChange={() => toggleSelection(domain.id)}
-              className='h-3.5 w-3.5'
+              className='h-4.5 w-4.5 shadow-none border-border cursor-pointer bg-background '
             />
-            <div className='flex flex-wrap items-center gap-1.5'>
-              <span className='font-medium text-xs dark:text-slate-200 transition-colors duration-300 ease-in-out'>
+            <div className='flex flex-wrap items-center gap-1.5  pr-8'>
+              <span className='truncate text-sm font-medium text-text  max-w-[135px] sm:max-w-[150px] '>
                 {domain.isRegex ? (
                   <code className='bg-purple-50 dark:bg-purple-950 px-1 py-0.5 rounded text-purple-800 dark:text-purple-300 font-mono transition-colors duration-300 ease-in-out'>
                     {domain.domain}
@@ -71,26 +72,26 @@ export function DomainList({ allSelected }: { allSelected: boolean }) {
                 )}
               </span>
               {domain.blockType === "specific-path" && domain.pathPattern && (
-                <Badge className='bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 hover:bg-amber-200 dark:hover:bg-amber-900 border-amber-200 dark:border-amber-800 text-[10px] py-0 h-4 transition-colors duration-300 ease-in-out'>
+                <div className='bg-warn  text-[10px] py-0 h-5 flex items-center rounded-full px-1.5 transition-colors duration-300 ease-in-out'>
                   Path: {domain.pathPattern}
-                </Badge>
+                </div>
               )}
               {domain.includeSubdomains && (
-                <Badge className='bg-slate-100 dark:bg-slate-800 dark:border-slate-700 text-[10px] py-0 h-4 transition-colors duration-300 ease-in-out'>
+                <div className='bg-badge  text-[10px] py-0 h-5 flex items-center rounded-full px-1.5 transition-colors duration-300 ease-in-out'>
                   Includes Subdomains
-                </Badge>
+                </div>
               )}
             </div>
           </div>
-          <div className='flex items-center gap-3'>
-            <span className='text-[10px] text-slate-500 dark:text-slate-400 transition-colors duration-300 ease-in-out'>
+          <div className='flex items-center gap-3 px-4'>
+            <span className='text-xs opacity-80 text-text transition-colors duration-300 ease-in-out'>
               Added {domain.dateAdded.toLocaleDateString()}
             </span>
             <Button
               onClick={() => onDelete(domain.id)}
-              className='text-red-500 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 hover:bg-red-50 dark:hover:bg-red-950 h-6 w-6 transition-colors duration-300 ease-in-out'
+              className=' hover:bg-error-light bg-transparent border-0 ring-0 rounded-full flex items-center justify-center h-8 w-8 transition-colors duration-300 ease-in-out p-0'
             >
-              <Trash2 className='h-3 w-3' />
+              <Trash2 className='h-4.5 w-4.5' />
               <span className='sr-only'>Delete</span>
             </Button>
           </div>

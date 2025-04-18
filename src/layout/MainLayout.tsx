@@ -1,6 +1,7 @@
 import Header from "@/components/header/Header";
 import TopBar from "@/components/header/TopBar";
 import Sidebar from "@/components/sidebar/Sidebar";
+import { usePageContext } from "@/context/PageContext";
 
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
@@ -11,6 +12,7 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout({ children, className }: MainLayoutProps) {
+  const { page } = usePageContext();
   return (
     <div
       className={cn(
@@ -19,7 +21,8 @@ export default function MainLayout({ children, className }: MainLayoutProps) {
       )}
     >
       <Header />
-      <TopBar />
+      {page !== "blackList" && <TopBar />}
+
       {children}
       <Sidebar />
     </div>

@@ -46,24 +46,24 @@ const BulkImportBtn = () => {
       <DialogTrigger asChild>
         <Button className='whitespace-nowrap '>Bulk Import</Button>
       </DialogTrigger>
-      <DialogContent className='max-w-md transition-colors duration-300 ease-in-out dark:bg-slate-900 dark:border-slate-700'>
-        <DialogHeader>
-          <DialogTitle className='text-sm dark:text-slate-200 transition-colors duration-300 ease-in-out'>
+      <DialogContent className='max-w-md transition-colors duration-300 ease-in-out p-6 rounded-[32px] '>
+        <DialogHeader className='gap-0'>
+          <DialogTitle className='text-base text-text transition-colors duration-300 ease-in-out'>
             Bulk Import Domains
           </DialogTitle>
-          <DialogDescription className='text-xs dark:text-slate-400 transition-colors duration-300 ease-in-out'>
+          <DialogDescription className='text-sm text-foreground transition-colors duration-300 ease-in-out'>
             Enter one domain per line to add multiple domains at once.
           </DialogDescription>
         </DialogHeader>
         <div className='py-3 space-y-4'>
           <div className='mb-1'>
-            <div className='text-xs font-medium text-slate-700 dark:text-slate-300 transition-colors duration-300 ease-in-out'>
+            <div className='text-sm font-medium text-text mb-2 transition-colors duration-300 ease-in-out'>
               Enter domains (one per line)
             </div>
           </div>
 
           <textarea
-            className='w-full h-32 p-2 border rounded-md text-xs transition-colors duration-300 ease-in-out dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200'
+            className='w-full h-32 p-2 border rounded-md text-[13px] transition-colors duration-300 ease-in-out input'
             placeholder='facebook.com
 *.twitter.com
 youtube.com/shorts/*
@@ -79,7 +79,7 @@ amazon.com/gp/product/*'
               ) as HTMLTextAreaElement;
               handleBulkImport(textarea.value);
             }}
-            className='text-xs h-7 transition-colors duration-300 ease-in-out'
+            className='  rounded transition-colors duration-300 ease-in-out'
           >
             Import Domains
           </Button>

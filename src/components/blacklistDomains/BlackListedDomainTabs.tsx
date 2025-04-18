@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { DomainList } from "./DomainList";
 import { FolderTree, Globe, Layers } from "lucide-react";
 import { IoFilterOutline } from "react-icons/io5";
+import { cn } from "@/lib/utils";
 
 const BlackListedDomainTabs = () => {
   const {
@@ -15,63 +16,59 @@ const BlackListedDomainTabs = () => {
   return (
     <div>
       <Tabs defaultValue='all' value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className='w-full grid grid-cols-4 gap-1 rounded-xl bg-slate-100 dark:bg-[hsl(var(--secondary))] p-1 transition-colors duration-300 ease-in-out'>
+        <TabsList className='w-full grid grid-cols-4 gap-1 rounded-md border border-border bg-card  h-11 px-2 py-1 transition-colors duration-300 ease-in-out'>
           <TabsTrigger
             value='all'
-            className={`rounded-lg flex items-center justify-center gap-1.5 py-1.5 text-xs transition-colors duration-300 ease-in-out ${
-              activeTab === "all"
-                ? "bg-white dark:bg-[hsl(var(--background))] shadow-sm data-[state=active]:text-slate-900 dark:data-[state=active]:text-[hsl(var(--foreground))]"
-                : "hover:bg-slate-50 dark:hover:bg-[hsl(var(--muted))] text-slate-600 dark:text-[hsl(var(--muted-foreground))]"
-            }`}
+            className={cn(
+              "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-[13px] transition-colors duration-300 ease-in-out hover:bg-hover text-text",
+              activeTab === "all" && "bg-background "
+            )}
           >
-            <Layers className='h-3 w-3' />
+            <Layers className='h-4 w-4' />
             <span>All Rules</span>
-            <div className='ml-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] py-0 px-1 h-4 min-w-4 flex items-center justify-center transition-colors duration-300 ease-in-out'>
+            <div className='ml-0.5 bg-badge text-[12px]  h-5 min-w-5 rounded-full flex items-center justify-center transition-colors duration-300 ease-in-out'>
               {domainCounts.all}
             </div>
           </TabsTrigger>
 
           <TabsTrigger
             value='exact'
-            className={`rounded-lg flex items-center justify-center gap-1.5 py-1.5 text-xs transition-colors duration-300 ease-in-out ${
-              activeTab === "exact"
-                ? "bg-white dark:bg-[hsl(var(--background))] shadow-sm data-[state=active]:text-slate-900 dark:data-[state=active]:text-[hsl(var(--foreground))]"
-                : "hover:bg-slate-50 dark:hover:bg-[hsl(var(--muted))] text-slate-600 dark:text-[hsl(var(--muted-foreground))]"
-            }`}
+            className={cn(
+              "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-[13px] transition-colors duration-300 ease-in-out hover:bg-hover text-text",
+              activeTab === "exact" && "bg-background "
+            )}
           >
-            <Globe className='h-3 w-3' />
+            <Globe className='h-4 w-4' />
             <span>Entire Websites</span>
-            <div className='ml-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] py-0 px-1 h-4 min-w-4 flex items-center justify-center transition-colors duration-300 ease-in-out'>
+            <div className='ml-0.5 bg-badge text-[12px]  h-5 min-w-5 rounded-full flex items-center justify-center transition-colors duration-300 ease-in-out'>
               {domainCounts.exact}
             </div>
           </TabsTrigger>
 
           <TabsTrigger
             value='subdomains'
-            className={`rounded-lg flex items-center justify-center gap-1.5 py-1.5 text-xs transition-colors duration-300 ease-in-out ${
-              activeTab === "subdomains"
-                ? "bg-white dark:bg-[hsl(var(--background))] shadow-sm data-[state=active]:text-slate-900 dark:data-[state=active]:text-[hsl(var(--foreground))]"
-                : "hover:bg-slate-50 dark:hover:bg-[hsl(var(--muted))] text-slate-600 dark:text-[hsl(var(--muted-foreground))]"
-            }`}
+            className={cn(
+              "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-[13px] transition-colors duration-300 ease-in-out hover:bg-hover text-text",
+              activeTab === "subdomains" && "bg-background "
+            )}
           >
-            <FolderTree className='h-3 w-3' />
+            <FolderTree className='h-4 w-4' />
             <span>With Subdomains</span>
-            <div className='ml-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] py-0 px-1 h-4 min-w-4 flex items-center justify-center transition-colors duration-300 ease-in-out'>
+            <div className='ml-0.5 bg-badge text-[12px]  h-5 min-w-5 rounded-full flex items-center justify-center transition-colors duration-300 ease-in-out'>
               {domainCounts.subdomains}
             </div>
           </TabsTrigger>
 
           <TabsTrigger
             value='paths'
-            className={`rounded-lg flex items-center justify-center gap-1.5 py-1.5 text-xs transition-colors duration-300 ease-in-out ${
-              activeTab === "paths"
-                ? "bg-white dark:bg-[hsl(var(--background))] shadow-sm data-[state=active]:text-slate-900 dark:data-[state=active]:text-[hsl(var(--foreground))]"
-                : "hover:bg-slate-50 dark:hover:bg-[hsl(var(--muted))] text-slate-600 dark:text-[hsl(var(--muted-foreground))]"
-            }`}
+            className={cn(
+              "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-[13px] transition-colors duration-300 ease-in-out hover:bg-hover text-text",
+              activeTab === "paths" && "bg-background "
+            )}
           >
             <IoFilterOutline className='h-3 w-3' />
             <span>Specific Paths</span>
-            <div className='ml-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] py-0 px-1 h-4 min-w-4 flex items-center justify-center transition-colors duration-300 ease-in-out'>
+            <div className='ml-0.5 bg-badge text-[12px]  h-5 min-w-5 rounded-full flex items-center justify-center transition-colors duration-300 ease-in-out'>
               {domainCounts.paths}
             </div>
           </TabsTrigger>
