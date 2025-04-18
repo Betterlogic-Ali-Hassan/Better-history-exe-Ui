@@ -1,6 +1,7 @@
 import Header from "@/components/header/Header";
 import TopBar from "@/components/header/TopBar";
 import Sidebar from "@/components/sidebar/Sidebar";
+import ThemeCards from "@/components/themeCards/ThemeCards";
 import { usePageContext } from "@/context/PageContext";
 
 import { cn } from "@/lib/utils";
@@ -22,7 +23,7 @@ export default function MainLayout({ children, className }: MainLayoutProps) {
     >
       <Header />
       {page !== "blackList" && <TopBar />}
-
+      <ThemeCards />
       {children}
       <Sidebar />
     </div>

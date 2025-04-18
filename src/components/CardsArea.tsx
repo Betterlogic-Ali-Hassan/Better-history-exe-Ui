@@ -2,7 +2,6 @@ import { useHistory } from "@/context/HistoryContext";
 
 import TabsCards from "./Cards";
 import { BackToTopContainer } from "./BackToTop";
-import ThemeCards from "./themeCards/ThemeCards";
 import DataNotFound from "./DataNotFound";
 import SelectionCard from "./SelectionCard";
 
@@ -15,7 +14,6 @@ const CardsArea = () => {
         <>
           <TabsCards cards={cards} />
           <SelectionCard />
-          <ThemeCards />
         </>
       ) : (
         <DataNotFound />
