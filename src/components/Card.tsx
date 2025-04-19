@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { Card } from "@/types/CardTypes";
 import { useHistoryItem } from "../hooks/use-history-item";
 import DeleteEntry from "./DeleteEntry";
+import { Checkbox } from "./ui/checkbox";
 
 interface Props {
   data: Card;
@@ -30,6 +31,7 @@ const TabCard = ({ data }: Props) => {
     >
       <div className='flex items-center'>
         <div className='flex items-center w-full'>
+          <Checkbox className='h-5 w-5 ml-4' />
           <a
             target='_blank'
             className={cn(
