@@ -14,6 +14,7 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children, className }: MainLayoutProps) {
   const { page } = usePageContext();
+  const showTopBar = page !== "blackList" && page !== "advExport";
   return (
     <div
       className={cn(
@@ -22,7 +23,7 @@ export default function MainLayout({ children, className }: MainLayoutProps) {
       )}
     >
       <Header />
-      {page !== "blackList" && <TopBar />}
+      {showTopBar && <TopBar />}
       <ThemeCards />
       {children}
       <Sidebar />

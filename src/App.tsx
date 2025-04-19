@@ -10,6 +10,7 @@ import { SearchContextProvider } from "./context/SearchFilterContext";
 import { HistoryProvider } from "./context/HistoryContext";
 import BlacklistDomainPage from "./pages/BlacklistDomainPage";
 import { BlackListContextProvider } from "./context/BlackListContext";
+import AdvExportPage from "./pages/AdvExportPage";
 
 const App = () => {
   const { page, dialogOpen } = usePageContext();
@@ -25,6 +26,7 @@ const App = () => {
                 {page === "search" && <SearchEnginePage />}
                 {page === "device" && <DevicePage />}
                 {page === "blackList" && <BlacklistDomainPage />}
+                {page === "advExport" && <AdvExportPage />}
                 {dialogOpen && (
                   <div
                     className='fixed inset-0 bg-black/50  '

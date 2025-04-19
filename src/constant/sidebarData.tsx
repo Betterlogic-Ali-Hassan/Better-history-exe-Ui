@@ -37,7 +37,7 @@ export const sidebarDataBottom = [
   {
     icon: <DocumentationIcon />,
     tooltip: "Documentation",
-    link: "document",
+    link: "advExport",
   },
   {
     icon: <ExistIcon />,
