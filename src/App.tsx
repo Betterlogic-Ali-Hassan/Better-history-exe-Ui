@@ -11,32 +11,38 @@ import { HistoryProvider } from "./context/HistoryContext";
 import BlacklistDomainPage from "./pages/BlacklistDomainPage";
 import { BlackListContextProvider } from "./context/BlackListContext";
 import AdvExportPage from "./pages/AdvExportPage";
+import AboutUs from "./pages/AboutUs";
+import { FeedBackProvider } from "./context/FeedbackDialogContex";
 
 const App = () => {
   const { page, dialogOpen } = usePageContext();
   return (
     <ThemeDropDownContextProvider>
       <HistoryProvider>
-        <BlackListContextProvider>
-          <HeaderProvider>
-            <SearchContextProvider>
-              <DateProvider>
-                {page === "activity" && <ActivityPage />}
-                {page === "downloads" && <DownloadPage />}
-                {page === "search" && <SearchEnginePage />}
-                {page === "device" && <DevicePage />}
-                {page === "blackList" && <BlacklistDomainPage />}
-                {page === "advExport" && <AdvExportPage />}
-                {dialogOpen && (
-                  <div
-                    className='fixed inset-0 bg-black/50  '
-                    style={{ zIndex: 50 }}
-                  ></div>
-                )}
-              </DateProvider>
-            </SearchContextProvider>
-          </HeaderProvider>
-        </BlackListContextProvider>
+        <FeedBackProvider>
+          <BlackListContextProvider>
+            <HeaderProvider>
+              <SearchContextProvider>
+                <DateProvider>
+                  {page === "activity" && <ActivityPage />}
+                  {page === "downloads" && <DownloadPage />}
+                  {page === "search" && <SearchEnginePage />}
+                  {page === "device" && <DevicePage />}
+                  {page === "blackList" && <BlacklistDomainPage />}
+                  {page === "advExport" && <AdvExportPage />}
+                  {page === "about" && <AboutUs />}
+
+                  {dialogOpen && (
+                    <div
+                      className='fixed inset-0 bg-black/50  '
+                      style={{ zIndex: 50 }}
+                    ></div>
+                  )}
+                </DateProvider>
+              </SearchContextProvider>
+            </HeaderProvider>
+          </BlackListContextProvider>
+        </FeedBackProvider>
       </HistoryProvider>
     </ThemeDropDownContextProvider>
   );

@@ -5,9 +5,15 @@ import SettingIcon from "@/svgs/SettingIcon";
 import { sidebarData, sidebarDataBottom } from "@/constant/sidebarData";
 import Logo from "./Logo";
 import SidebarItem from "./SidebarItem";
+import { useFeedBack } from "@/context/FeedbackDialogContex";
+import FeedBackIcon from "@/svgs/FeedBackIcon";
 // import Menu from "../menu/Menu";
 
 const Sidebar = () => {
+  const { setOpen } = useFeedBack();
+  const handleOpenFeedBack = () => {
+    setOpen(true);
+  };
   return (
     <>
       <div className='fixed left-0 top-0 h-screen z-50 '>
@@ -30,6 +36,11 @@ const Sidebar = () => {
                     {sidebarData.map((item, i) => (
                       <SidebarItem {...item} key={i} />
                     ))}
+                    <SidebarItem
+                      icon={<FeedBackIcon />}
+                      tooltip='FeedBack'
+                      onClick={handleOpenFeedBack}
+                    />
                     {/* <SidebarItem
                     icon={<MobileCategoriesFilter />}
                     tooltip='Filters'

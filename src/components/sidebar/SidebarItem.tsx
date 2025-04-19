@@ -9,8 +9,10 @@ interface Props {
   side?: "left" | "right" | "top" | "bottom";
   tooltipClassName?: string;
   linkSelected?: boolean;
+  onClick?: () => void;
 }
 const SidebarItem = ({
+  onClick,
   icon,
   tooltip,
   className,
@@ -24,6 +26,7 @@ const SidebarItem = ({
   const handelClick = (link: string) => {
     return () => {
       setPage(link);
+      if (onClick) onClick();
     };
   };
   return (

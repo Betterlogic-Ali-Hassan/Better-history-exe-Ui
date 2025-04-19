@@ -1,10 +1,10 @@
-import DocumentationIcon from "@/svgs/DocumentationIcon";
-import ExistIcon from "@/svgs/ExistIcon";
 import DownloadIcon from "@/svgs/DownloadIcon";
 import Activity from "@/svgs/Activity";
 import Devices from "@/svgs/Devices";
 import SearchEngineIcon from "@/svgs/SearchEngineIcon";
 import LinkSlash from "@/svgs/LinkSlash";
+import FileExport from "@/svgs/FileExport";
+import About from "@/svgs/About";
 
 export const sidebarData = [
   {
@@ -35,13 +35,13 @@ export const sidebarData = [
 ];
 export const sidebarDataBottom = [
   {
-    icon: <DocumentationIcon />,
-    tooltip: "Documentation",
+    icon: <FileExport />,
+    tooltip: "Advance Export",
     link: "advExport",
   },
   {
-    icon: <ExistIcon />,
-    tooltip: "Logout",
-    link: "logout",
+    icon: <About />,
+    tooltip: "About Us",
+    link: "about",
   },
 ];

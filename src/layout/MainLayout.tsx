@@ -1,3 +1,4 @@
+import FeedBack from "@/components/feebBackPage/FeedBack";
 import Header from "@/components/header/Header";
 import TopBar from "@/components/header/TopBar";
 import Sidebar from "@/components/sidebar/Sidebar";
@@ -14,7 +15,8 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children, className }: MainLayoutProps) {
   const { page } = usePageContext();
-  const showTopBar = page !== "blackList" && page !== "advExport";
+  const showTopBar =
+    page !== "blackList" && page !== "advExport" && page !== "about";
   return (
     <div
       className={cn(
@@ -25,7 +27,9 @@ export default function MainLayout({ children, className }: MainLayoutProps) {
       <Header />
       {showTopBar && <TopBar />}
       <ThemeCards />
+
       {children}
+      <FeedBack />
       <Sidebar />
     </div>
   );

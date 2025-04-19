@@ -7,9 +7,11 @@ interface buttonProps {
   id?: string;
   disabled?: boolean;
   title?: string;
+  type?: "button" | "submit" | "reset";
 }
 
 const Button = ({
+  type,
   children,
   className,
   onClick,
@@ -27,6 +29,7 @@ const Button = ({
         className
       )}
       onClick={onClick}
+      type={type}
     >
       {children}
     </button>
