@@ -97,7 +97,7 @@ const DeleteDialog = () => {
             </Button>
             <Button
               onClick={handleDeleteDomain}
-              className=' transition-colors duration-300 ease-in-out   hover:bg-error-light rounded'
+              className=' transition-colors duration-300 ease-in-out   hover:bg-hover rounded'
             >
               <Trash2 className='mr-2 h-4 w-4' />
               Delete

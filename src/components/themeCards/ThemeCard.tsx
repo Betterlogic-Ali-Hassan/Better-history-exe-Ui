@@ -10,15 +10,16 @@ const ThemeCard = ({
   theme,
 }: {
   icon: React.ReactNode;
-  theme: "light" | "dark" | "sunrise" | "sunset" | "forest";
+  theme: "light" | "dark" | "sunrise" | "sunset";
 }) => {
   const { theme: themeValue, setTheme } = useTheme();
   const handleSetTheme = () => setTheme(theme);
   const isSelected = themeValue === theme;
 
   return (
-    <div onClick={handleSetTheme} data-theme={theme}>
+    <div onClick={handleSetTheme}>
       <button
+        data-theme={theme}
         className={cn(
           "bg-background text-foreground p-6 rounded-[14px] cursor-pointer border-transparent relative flex flex-col hover:bg-hover transition duration-200  border-4 w-[200px] max-h-[200px] ",
           isSelected && " border-brand "

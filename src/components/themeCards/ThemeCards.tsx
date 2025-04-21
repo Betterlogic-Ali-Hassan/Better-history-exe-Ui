@@ -5,10 +5,10 @@ import { cn } from "@/lib/utils";
 import { useThemeDropDownContext } from "@/context/ThemeDropDownContext";
 import CrossIcon from "@/svgs/CrossIcon";
 
-type Theme = "light" | "dark" | "sunrise" | "sunset" | "forest";
+type Theme = "light" | "dark" | "sunrise" | "sunset";
 
 const ThemeCards = () => {
-  const themes: Theme[] = ["dark", "light", "sunrise", "sunset", "forest"];
+  const themes: Theme[] = ["dark", "light", "sunrise", "sunset"];
   const { isThemeDropDownOpen, setIsThemeDropDownOpen } =
     useThemeDropDownContext();
 

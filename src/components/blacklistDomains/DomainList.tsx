@@ -50,7 +50,8 @@ export function DomainList({ allSelected }: { allSelected: boolean }) {
           key={domain.id}
           className={cn(
             " border-transparent flex items-center h-14 lg:h-12 justify-between hover:bg-hover overflow-x-auto no-scrollbar select-none bg-card  w-full relative border  rounded-md group",
-            index === domains.length - 1 && "rounded-b-none"
+            index === domains.length - 1 && "rounded-b-none",
+            selectedDomains.includes(domain.id) && "bg-hover"
           )}
         >
           <div className='flex items-center gap-2 px-4'>
