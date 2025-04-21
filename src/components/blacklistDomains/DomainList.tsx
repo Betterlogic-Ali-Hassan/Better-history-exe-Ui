@@ -38,7 +38,7 @@ export function DomainList({ allSelected }: { allSelected: boolean }) {
           </label>
         </div>
         {selectedDomains.length > 0 && (
-          <span className='text-xs text-slate-500 dark:text-slate-400 transition-colors duration-300 ease-in-out'>
+          <span className='text-xs text-text transition-colors duration-300 ease-in-out'>
             {selectedDomains.length} item{selectedDomains.length > 1 ? "s" : ""}{" "}
             selected
           </span>
