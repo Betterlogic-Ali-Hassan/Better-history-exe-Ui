@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 // Theme types
-type Theme = "light" | "dark" | "sunrise" | "sunset" | "system" | "forest";
+type Theme = "light" | "dark" | "sunrise" | "sunset" | "system";
 
 interface ThemeContextProps {
   theme: Theme;
