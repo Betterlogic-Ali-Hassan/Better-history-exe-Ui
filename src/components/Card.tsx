@@ -72,7 +72,7 @@ const TabCard = ({ data }: Props) => {
           className={cn(
             "mx-2  cursor-pointer group-hover:opacity-60 transition duration-200    text-foreground hover:!opacity-100 ",
             showSelectionCard && "!opacity-0 pointer-events-none",
-            page === "devices" && "!hidden"
+            page === "device" && "hidden"
           )}
         />
       </div>
