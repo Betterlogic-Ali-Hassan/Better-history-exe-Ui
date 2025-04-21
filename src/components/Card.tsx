@@ -51,6 +51,7 @@ const TabCard = ({ data }: Props) => {
               {title}
             </div>
           </a>
+
           <div className='pr-6 text-xs opacity-50  max-w-[220px]   min-w-[220px] tracking-wide max-sm:hidden'>
             <span className='truncate max-w-[170px] block text-text'>
               {path}
@@ -65,13 +66,15 @@ const TabCard = ({ data }: Props) => {
             <div></div>
           )}
         </div>
-        <DeleteEntry
-          id={id}
-          className={cn(
-            "mx-2  cursor-pointer group-hover:opacity-60 transition duration-200    text-foreground hover:!opacity-100 ",
-            showSelectionCard && "!opacity-0 pointer-events-none"
-          )}
-        />
+        {page === "devices" && (
+          <DeleteEntry
+            id={id}
+            className={cn(
+              "mx-2  cursor-pointer group-hover:opacity-60 transition duration-200    text-foreground hover:!opacity-100 ",
+              showSelectionCard && "!opacity-0 pointer-events-none"
+            )}
+          />
+        )}
       </div>
     </div>
   );
