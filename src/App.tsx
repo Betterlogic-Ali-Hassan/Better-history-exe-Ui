@@ -34,7 +34,7 @@ const App = () => {
 
                   {dialogOpen && (
                     <div
-                      className='fixed inset-0 bg-black/50  '
+                      className='fixed inset-0 bg-black/50  backdrop-blur-[2px] '
                       style={{ zIndex: 50 }}
                     ></div>
                   )}
