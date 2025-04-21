@@ -101,7 +101,8 @@
   --switch-enabled-bg-color: #000;
   --switch-disabled-bg-color: #dae0e6;
 
-  --info-alert-color: #eef6ff;
+  --info-alert-color: #0749951f;
+
   --warn-color: #ffe585;
   --success-color: #f0fdf4;
   --success-text: #016630;
@@ -121,7 +122,7 @@
   --error-light-color: #171c1f;
   --text-color: #ffff;
   --text-foreground: #d4d4d4;
-  --info-alert-color: #171c1f;
+  --info-alert-color: #0749951f;
   --btn-hover: #2a3236;
   --badge-color: #333d42;
   --switch-enabled-bg-color: #fff;

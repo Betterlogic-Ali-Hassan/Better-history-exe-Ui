@@ -2,7 +2,6 @@ import { Trash2 } from "lucide-react";
 import Button from "../ui/Button";
 import { useBlackList } from "@/context/BlackListContext";
 import { Checkbox } from "../ui/checkbox";
-import { cn } from "@/lib/utils";
 
 export function DomainList({ allSelected }: { allSelected: boolean }) {
   const {
@@ -48,9 +47,7 @@ export function DomainList({ allSelected }: { allSelected: boolean }) {
       {domains.map((domain) => (
         <div
           key={domain.id}
-          className={cn(
-            "  border-transparent flex items-center h-14 lg:h-12 justify-between hover:bg-hover overflow-x-auto no-scrollbar select-none bg-card  w-full relative border  rounded-md group"
-          )}
+          className=' border-transparent flex items-center h-14 lg:h-12 justify-between hover:bg-hover overflow-x-auto no-scrollbar select-none bg-card  w-full relative border  rounded-md group'
         >
           <div className='flex items-center gap-2 px-4'>
             <Checkbox
