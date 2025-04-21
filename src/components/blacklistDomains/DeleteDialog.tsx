@@ -26,7 +26,7 @@ const DeleteDialog = () => {
       <Dialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
         <DialogContent className='sm:max-w-md transition-colors duration-300 ease-in-out bg-background rounded-[32px] p-6 '>
           <AlertDialogHeader>
-            <DialogTitle className='flex items-center gap-2 text-error  text-base transition-colors duration-300 ease-in-out'>
+            <DialogTitle className='flex items-center gap-2 text-text text-base transition-colors duration-300 ease-in-out'>
               <AlertTriangle className='h-4 w-4' />
               Confirm Deletion
             </DialogTitle>

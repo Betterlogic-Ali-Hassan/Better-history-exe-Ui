@@ -4,7 +4,7 @@ const BlackListedDomainSearch = () => {
   const { searchQuery, setSearchQuery } = useBlackList();
   return (
     <div className='flex justify-between items-center mb-4 mt-5'>
-      <h3 className='text-base font-medium text-text transition-colors duration-300 ease-in-out'>
+      <h3 className='text-lg font-medium text-text transition-colors duration-300 ease-in-out'>
         Blacklisted Domains
       </h3>
       <div className='flex gap-2'>

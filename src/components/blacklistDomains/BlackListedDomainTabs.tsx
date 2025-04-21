@@ -16,15 +16,15 @@ const BlackListedDomainTabs = () => {
   return (
     <div>
       <Tabs defaultValue='all' value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className='w-full grid grid-cols-4 gap-1 rounded-md border border-border bg-card  h-11 px-2 py-1 transition-colors duration-300 ease-in-out'>
+        <TabsList className='w-full grid grid-cols-4 gap-1 rounded-md border border-border bg-card  h-[52px] px-2 py-1 transition-colors duration-300 ease-in-out'>
           <TabsTrigger
             value='all'
             className={cn(
-              "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-[13px] transition-colors duration-300 ease-in-out hover:bg-hover text-text",
+              "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-sm transition-colors duration-300 ease-in-out hover:bg-hover text-text",
               activeTab === "all" && "bg-background "
             )}
           >
-            <Layers className='h-4 w-4' />
+            <Layers className='!h-5 !w-5' />
             <span>All Rules</span>
             <div className='ml-0.5 bg-badge text-[12px]  h-5 min-w-5 rounded-full flex items-center justify-center transition-colors duration-300 ease-in-out'>
               {domainCounts.all}
@@ -34,11 +34,11 @@ const BlackListedDomainTabs = () => {
           <TabsTrigger
             value='exact'
             className={cn(
-              "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-[13px] transition-colors duration-300 ease-in-out hover:bg-hover text-text",
+              "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-sm transition-colors duration-300 ease-in-out hover:bg-hover text-text",
               activeTab === "exact" && "bg-background "
             )}
           >
-            <Globe className='h-4 w-4' />
+            <Globe className='!h-5 !w-5' />
             <span>Entire Websites</span>
             <div className='ml-0.5 bg-badge text-[12px]  h-5 min-w-5 rounded-full flex items-center justify-center transition-colors duration-300 ease-in-out'>
               {domainCounts.exact}
@@ -48,11 +48,11 @@ const BlackListedDomainTabs = () => {
           <TabsTrigger
             value='subdomains'
             className={cn(
-              "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-[13px] transition-colors duration-300 ease-in-out hover:bg-hover text-text",
+              "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-sm transition-colors duration-300 ease-in-out hover:bg-hover text-text",
               activeTab === "subdomains" && "bg-background "
             )}
           >
-            <FolderTree className='h-4 w-4' />
+            <FolderTree className='!h-5 !w-5' />
             <span>With Subdomains</span>
             <div className='ml-0.5 bg-badge text-[12px]  h-5 min-w-5 rounded-full flex items-center justify-center transition-colors duration-300 ease-in-out'>
               {domainCounts.subdomains}
@@ -62,7 +62,7 @@ const BlackListedDomainTabs = () => {
           <TabsTrigger
             value='paths'
             className={cn(
-              "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-[13px] transition-colors duration-300 ease-in-out hover:bg-hover text-text",
+              "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-sm transition-colors duration-300 ease-in-out hover:bg-hover text-text",
               activeTab === "paths" && "bg-background "
             )}
           >
