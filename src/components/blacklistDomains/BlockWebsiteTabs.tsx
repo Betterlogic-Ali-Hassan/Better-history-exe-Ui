@@ -1,6 +1,8 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useBlackList } from "@/context/BlackListContext";
 import { cn } from "@/lib/utils";
+import EntrieDomainIcon from "@/svgs/EntrieDomainIcon";
+import RefreshIcon from "./RefreshIcon";
 const BlockWebsiteTabs = () => {
   const { blockType, setBlockType } = useBlackList();
   return (
@@ -16,7 +18,7 @@ const BlockWebsiteTabs = () => {
         htmlFor='entire-domain'
         className={cn(
           "flex flex-col items-center p-3 rounded-lg border-2 cursor-pointer transition-all duration-300 ease-in-out border-border hover:bg-hover ",
-          blockType === "entire-domain" && "border-brand  bg-card  shadow-sm"
+          blockType === "entire-domain" && "border-badge bg-hover "
         )}
       >
         <RadioGroupItem
@@ -31,28 +33,7 @@ const BlockWebsiteTabs = () => {
               blockType === "entire-domain" && "bg-badge "
             )}
           >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='18'
-              height='18'
-              viewBox='0 0 24 24'
-              fill='none'
-              stroke='currentColor'
-              strokeWidth='2'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              className={`transition-colors duration-300 ease-in-out ${
-                blockType === "entire-domain"
-                  ? "text-slate-800 dark:text-slate-200"
-                  : "text-slate-500 dark:text-slate-400"
-              }`}
-            >
-              <rect width='18' height='18' x='3' y='3' rx='2' />
-              <path d='M7 7h.01' />
-              <path d='M17 7h.01' />
-              <path d='M7 17h.01' />
-              <path d='M17 17h.01' />
-            </svg>
+            <EntrieDomainIcon className='transition-colors duration-300 ease-in-out  ' />
           </div>
         </div>
         <span
@@ -72,7 +53,7 @@ const BlockWebsiteTabs = () => {
         htmlFor='specific-path'
         className={cn(
           "flex flex-col items-center p-3 rounded-lg border-2 cursor-pointer transition-all duration-300 ease-in-out border-border hover:bg-hover ",
-          blockType === "specific-path" && "border-brand  bg-card  shadow-sm"
+          blockType === "specific-path" && "  border-badge bg-hover  "
         )}
       >
         <RadioGroupItem
@@ -87,27 +68,7 @@ const BlockWebsiteTabs = () => {
               blockType === "specific-path" && "bg-badge "
             )}
           >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='18'
-              height='18'
-              viewBox='0 0 24 24'
-              fill='none'
-              stroke='currentColor'
-              strokeWidth='2'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              className={`transition-colors duration-300 ease-in-out ${
-                blockType === "specific-path"
-                  ? "text-slate-800 dark:text-slate-200"
-                  : "text-slate-500 dark:text-slate-400"
-              }`}
-            >
-              <path d='M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8' />
-              <path d='M3 3v5h5' />
-              <path d='M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16' />
-              <path d='M16 16h5v5' />
-            </svg>
+            <RefreshIcon />
           </div>
         </div>
         <span
