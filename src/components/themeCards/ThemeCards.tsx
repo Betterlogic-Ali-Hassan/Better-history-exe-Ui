@@ -23,7 +23,7 @@ const ThemeCards = () => {
     >
       <div
         className={cn(
-          "flex flex-col gap-4 p-6 bg-card border border-border rounded-[12px] max-[1600px]:max-h-[660px] overflow-y-auto   mb-2 no-scrollbar w-full max-w-[280px] items-center  bottom-2  pt-10 translate-x-[100%] opacity-0 transition duration-300",
+          "flex flex-col gap-4 p-6 bg-card border border-border rounded-[12px] max-[1600px]:max-h-[530px] overflow-y-auto   mb-2 no-scrollbar w-full max-w-[280px] items-center  bottom-2  pt-10 translate-x-[100%] opacity-0 transition duration-300",
           isThemeDropDownOpen && "translate-x-0 opacity-100"
         )}
       >
