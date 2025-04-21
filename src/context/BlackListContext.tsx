@@ -84,11 +84,9 @@ export const BlackListContextProvider = ({
       return;
     }
 
-    // Check if it's a regex pattern (starts with ^ or contains special regex characters)
     const regexSpecialChars = /[\^$[\]$${}?*+|\\]/;
     if (regexSpecialChars.test(domain)) {
       try {
-        // Try to create a RegExp object to validate the pattern
         new RegExp(domain);
         setIsValidDomain(true);
         return;
@@ -99,7 +97,6 @@ export const BlackListContextProvider = ({
       }
     }
 
-    // Regular domain validation
     const domainRegex =
       /^([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/;
     setIsValidDomain(domainRegex.test(domain));

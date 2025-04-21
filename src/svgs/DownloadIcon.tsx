@@ -2,9 +2,9 @@ const DownloadIcon = ({ className }: { className?: string }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      height='26px'
+      height='28px'
       viewBox='0 -960 960 960'
-      width='26px'
+      width='28px'
       fill='currentColor'
       className={className}
     >

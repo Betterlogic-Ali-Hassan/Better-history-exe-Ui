@@ -9,11 +9,13 @@ import SuccessMessage from "./SuccessMessage";
 const BlackListDomains = () => {
   return (
     <div className='h-full overflow-y-auto no-scrollbar px-1 mt-2'>
-      <Header />
-      <BlockWebsiteTabs />
-      <BlockedDomainsPanel />
-      <BlockedDomainPanelAlerts />
-      <SuccessMessage />
+      <div className='bg-card p-5 rounded-lg'>
+        <Header />
+        <BlockWebsiteTabs />
+        <BlockedDomainsPanel />
+        <BlockedDomainPanelAlerts />
+        <SuccessMessage />
+      </div>
       <BlackListedDomain />
       <DeleteDialog />
     </div>

@@ -8,7 +8,7 @@ const BlockedDomainPanelAlerts = () => {
     <>
       <div>
         {blockType === "entire-domain" && (
-          <div className='flex items-center space-x-2 p-1.5 py-2 bg-card   rounded mt-4 transition-colors duration-300 ease-in-out'>
+          <div className='flex items-center space-x-2 p-1.5 py-2 bg-input   rounded mt-4 transition-colors duration-300 ease-in-out'>
             <Switch
               id='include-subdomains'
               checked={includeSubdomains}

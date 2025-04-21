@@ -51,7 +51,7 @@ const TabCard = ({ data }: Props) => {
               {title}
             </div>
           </a>
-          <div className='pr-6 text-xs opacity-50  max-w-[300px]   min-w-[300px] tracking-wide max-sm:hidden'>
+          <div className='pr-6 text-xs opacity-50  max-w-[220px]   min-w-[220px] tracking-wide max-sm:hidden'>
             <span className='truncate max-w-[170px] block text-text'>
               {path}
             </span>

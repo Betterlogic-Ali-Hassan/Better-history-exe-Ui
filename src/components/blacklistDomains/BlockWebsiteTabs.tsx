@@ -15,7 +15,7 @@ const BlockWebsiteTabs = () => {
       <label
         htmlFor='entire-domain'
         className={cn(
-          "flex flex-col items-center p-3 rounded-lg border-2 cursor-pointer transition-all duration-300 ease-in-out border-border hover:border-hover ",
+          "flex flex-col items-center p-3 rounded-lg border-2 cursor-pointer transition-all duration-300 ease-in-out border-border hover:bg-hover ",
           blockType === "entire-domain" && "border-brand  bg-card  shadow-sm"
         )}
       >
@@ -71,7 +71,7 @@ const BlockWebsiteTabs = () => {
       <label
         htmlFor='specific-path'
         className={cn(
-          "flex flex-col items-center p-3 rounded-lg border-2 cursor-pointer transition-all duration-300 ease-in-out border-border hover:border-hover ",
+          "flex flex-col items-center p-3 rounded-lg border-2 cursor-pointer transition-all duration-300 ease-in-out border-border hover:bg-hover ",
           blockType === "specific-path" && "border-brand  bg-card  shadow-sm"
         )}
       >
