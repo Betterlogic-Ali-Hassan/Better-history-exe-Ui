@@ -8,12 +8,11 @@ const BlockedDomainPanelAlerts = () => {
     <>
       <div>
         {blockType === "entire-domain" && (
-          <div className='flex items-center space-x-2 px-3 py-3 bg-background   rounded mt-4 transition-colors duration-300 ease-in-out'>
+          <div className='flex items-center space-x-2 px-3 py-3 bg-background rounded mt-4 transition-colors duration-300 ease-in-out'>
             <Switch
               id='include-subdomains'
               checked={includeSubdomains}
               onCheckedChange={setIncludeSubdomains}
-              className='scale-75'
             />
             <label
               htmlFor='include-subdomains'
@@ -24,7 +23,7 @@ const BlockedDomainPanelAlerts = () => {
           </div>
         )}
       </div>
-      <div className='mt-3 text-sm text-text  space-y-1 bg-info   rounded min-h-10 py-3 flex   border border-transparent pl-4  transition-colors duration-300 flex-col items-start ease-in-out'>
+      <div className='mt-3 text-sm text-text space-y-1 bg-info rounded  py-3 flex   border border-transparent pl-4  transition-colors duration-300 flex-col items-start ease-in-out min-h-[48px]'>
         <p className='flex items-center'>
           <Info className='h-4 w-4 mr-2  transition-colors duration-300 ease-in-out' />
           Domains must be in the format: example.com or regex pattern:

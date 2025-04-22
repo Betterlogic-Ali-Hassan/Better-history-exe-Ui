@@ -61,8 +61,8 @@ export function DomainList({ allSelected }: { allSelected: boolean }) {
               onCheckedChange={() => toggleSelection(domain.id)}
               className='h-4.5 w-4.5 shadow-none border-border cursor-pointer bg-background '
             />
-            <div className='flex flex-wrap items-center gap-1.5  pr-8'>
-              <span className='truncate text-sm font-medium text-text  max-w-[135px] sm:max-w-[150px] '>
+            <div className='flex flex-wrap items-center gap-1.5  pr-8 '>
+              <span className='truncate text-sm font-medium text-text  max-w-[135px] sm:max-w-[150px]  capitalize '>
                 {domain.isRegex ? (
                   <code className='bg-badge  px-1 py-0.5 rounded text-text  font-mono transition-colors duration-300 ease-in-out'>
                     {domain.domain}
