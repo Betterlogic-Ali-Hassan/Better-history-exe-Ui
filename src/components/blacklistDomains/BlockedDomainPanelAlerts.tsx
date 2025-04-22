@@ -8,18 +8,22 @@ const BlockedDomainPanelAlerts = () => {
     <>
       <div>
         {blockType === "entire-domain" && (
-          <div className='flex items-center space-x-2 px-3 py-3 bg-background rounded mt-4 transition-colors duration-300 ease-in-out'>
-            <Switch
-              id='include-subdomains'
-              checked={includeSubdomains}
-              onCheckedChange={setIncludeSubdomains}
-            />
-            <label
-              htmlFor='include-subdomains'
-              className='cursor-pointer text-sm text-text transition-colors duration-300 ease-in-out'
-            >
-              Include subdomains (e.g., *.example.com)
-            </label>
+          <div className='mt-4'>
+            <label className='text-[15px]'>Include Subdomains</label>
+            <div className='flex items-center space-x-2 px-3 py-3 bg-background rounded mt-2 transition-colors duration-300 ease-in-out'>
+              <Switch
+                id='include-subdomains'
+                checked={includeSubdomains}
+                onCheckedChange={setIncludeSubdomains}
+                className='scale-75'
+              />
+              <label
+                htmlFor='include-subdomains'
+                className='cursor-pointer text-sm text-text transition-colors duration-300 ease-in-out'
+              >
+                Enable to include all subdomains (e.g., *.example.com)
+              </label>
+            </div>
           </div>
         )}
       </div>

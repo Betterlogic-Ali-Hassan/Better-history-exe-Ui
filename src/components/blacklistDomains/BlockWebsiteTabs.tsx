@@ -42,7 +42,7 @@ const BlockWebsiteTabs = () => {
             blockType === "entire-domain" && "text-text "
           )}
         >
-          Block Entire Website
+          Block Entire Domain
         </span>
         <span className='text-xs text-foreground opacity-70  mt-0.5 text-center transition-colors duration-300 ease-in-out'>
           Blocks example.com and all its pages

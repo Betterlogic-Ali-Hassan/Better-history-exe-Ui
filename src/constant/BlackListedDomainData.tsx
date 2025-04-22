@@ -7,6 +7,7 @@ export const domains: BlacklistedDomain[] = [
     includeSubdomains: true,
     blockType: "entire-domain",
     dateAdded: new Date(2023, 3, 15),
+    path: "https://www.facebook.com/",
   },
   {
     id: "2",
@@ -14,6 +15,7 @@ export const domains: BlacklistedDomain[] = [
     includeSubdomains: false,
     blockType: "entire-domain",
     dateAdded: new Date(2023, 5, 22),
+    path: "https://www.twitter.com/",
   },
   {
     id: "3",
@@ -21,6 +23,7 @@ export const domains: BlacklistedDomain[] = [
     includeSubdomains: true,
     blockType: "entire-domain",
     dateAdded: new Date(2023, 6, 10),
+    path: "https://www.instagram.com/",
   },
   {
     id: "4",
@@ -29,6 +32,7 @@ export const domains: BlacklistedDomain[] = [
     pathPattern: "/maps/*",
     blockType: "specific-path",
     dateAdded: new Date(2023, 7, 5),
+    path: "https://www.google.com/",
   },
   {
     id: "5",
@@ -37,5 +41,6 @@ export const domains: BlacklistedDomain[] = [
     pathPattern: "/shorts/*",
     blockType: "specific-path",
     dateAdded: new Date(2023, 8, 12),
+    path: "https://www.youtube.com/",
   },
 ];

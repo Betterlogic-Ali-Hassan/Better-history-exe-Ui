@@ -13,8 +13,8 @@ const Header = () => {
         </span>
       </h1>
       <p>
-        Prevent specific websites or paths from being recorded in your browsing
-        history
+        Control which websites or URL paths are excluded from your browsing
+        history.
       </p>
       <Tooltip
         id='info-tooltip'

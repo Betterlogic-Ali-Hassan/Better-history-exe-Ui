@@ -61,6 +61,11 @@ export function DomainList({ allSelected }: { allSelected: boolean }) {
               onCheckedChange={() => toggleSelection(domain.id)}
               className='h-4.5 w-4.5 shadow-none border-border cursor-pointer bg-background '
             />
+            <img
+              className='w-[16px] h-[16px] ml-2 mr-1 flex-none rounded-sm overflow-hidden'
+              src={`https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${domain.path}/&size=32`}
+              alt='img'
+            />
             <div className='flex flex-wrap items-center gap-1.5  pr-8 '>
               <span className='truncate text-sm font-medium text-text  max-w-[135px] sm:max-w-[150px]  capitalize '>
                 {domain.isRegex ? (
@@ -83,10 +88,11 @@ export function DomainList({ allSelected }: { allSelected: boolean }) {
               )}
             </div>
           </div>
-          <div className='flex items-center gap-3 px-4'>
+          <div className='flex items-center gap-2 px-4'>
             <span className='text-xs opacity-80 text-text transition-colors duration-300 ease-in-out'>
               Added {domain.dateAdded.toLocaleDateString()}
             </span>
+
             <Button
               onClick={() => onDelete(domain.id)}
               className=' hover:bg-error-light bg-transparent border-0 ring-0 rounded-full flex items-center justify-center h-8 w-8 transition-colors duration-300 ease-in-out p-0'

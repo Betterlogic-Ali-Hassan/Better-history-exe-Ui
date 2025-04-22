@@ -16,7 +16,7 @@ const BlackListedDomainTabs = () => {
   return (
     <div>
       <Tabs defaultValue='all' value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className='w-full grid grid-cols-4 gap-1 rounded-md border border-border bg-card  h-[52px] px-2 py-1 transition-colors duration-300 ease-in-out'>
+        <TabsList className='w-full grid grid-cols-4 gap-1 rounded-md border border-border bg-card  h-[48px] px-2 py-1 transition-colors duration-300 ease-in-out'>
           <TabsTrigger
             value='all'
             className={cn(

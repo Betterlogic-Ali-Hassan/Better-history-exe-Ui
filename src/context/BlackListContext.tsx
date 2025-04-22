@@ -12,6 +12,7 @@ export interface BlacklistedDomain {
   blockType: "entire-domain" | "specific-path";
   dateAdded: Date;
   isRegex?: boolean;
+  path?: string;
 }
 type BlackListContextProps = {
   blockType: "entire-domain" | "specific-path";

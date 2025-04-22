@@ -9,6 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../ui/dialog";
+import FolderIcon from "@/svgs/FolderIcon";
 
 const BulkImportBtn = () => {
   const { blacklistedDomains, setBlacklistedDomains } = useBlackList();
@@ -44,7 +45,10 @@ const BulkImportBtn = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className='whitespace-nowrap '>Bulk Import</Button>
+        <Button className='whitespace-nowrap flex gap-2 '>
+          <FolderIcon />
+          Bulk Import
+        </Button>
       </DialogTrigger>
       <DialogContent className='max-w-md transition-colors duration-300 ease-in-out p-6 rounded-[32px] '>
         <DialogHeader className='gap-0'>
