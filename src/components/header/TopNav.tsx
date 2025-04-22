@@ -70,7 +70,7 @@ const TopNav = ({ className, categoriesData }: Props) => {
                     >
                       {category?.name}
                       <span
-                        className='ml-2 inline-flex items-center justify-center rounded-full hover:bg-brand-hover/80'
+                        className='ml-2 inline-flex items-center justify-center rounded-full '
                         onClick={(e) => handleRemoveCategory(categoryId, e)}
                       >
                         <X size={16} className='text-white mt-0.5' />

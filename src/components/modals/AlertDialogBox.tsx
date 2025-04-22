@@ -49,11 +49,12 @@ const AlertDialogBox = ({
           </>
         )}
       </AlertDialogTrigger>
-      <AlertDialogContent className='max-w-lg border-none transform overflow-hidden rounded-md bg-card  p-6 text-left shadow-xl transition-all sm:my-8 w-full sm:p-6'>
+      <AlertDialogContent className='max-w-lg border-none transform overflow-hidden rounded-[32px] bg-card  p-6 text-left shadow-xl transition-all sm:my-8 w-full sm:p-6'>
         <AlertDialogHeader>
           <AlertDialogTitle className='pb-4'>
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-4 '>
               <WarningIcon />
+
               <h3
                 className='text-lg font-semibold leading-6 text-text tracking-tight'
                 id='modal-title'
