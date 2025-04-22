@@ -80,19 +80,26 @@ const TabCard = ({ data }: Props) => {
             <div className=' text-[11px] absolute top-1 right-3 opacity-80  tracking-wide '>
               {date}
             </div>
-            <div className=' text-[10px] border border-badge  py-0.5 rounded-full px-2  mt-5  '>
+            <div
+              className={cn(
+                " text-[10px] border border-badge  py-0.5 rounded-full px-2  mt-5  ",
+                page === "device" && "hidden"
+              )}
+            >
               {time}
             </div>
           </a>
           <div
             className={cn(
               " cursor-pointer  opacity-0 transition h-full duration-200 bg-hover flex items-center gap-2 absolute right-2    text-foreground group-hover:!opacity-100 ",
-              showSelectionCard && "!opacity-0 pointer-events-none",
-              page === "device" && "hidden"
+              showSelectionCard && "!opacity-0 pointer-events-none"
             )}
           >
             <Button
-              className='text-[11px] bg-badge'
+              className={cn(
+                "text-[11px] bg-badge",
+                page === "device" && "hidden"
+              )}
               onClick={handleAddBlackListDomain}
             >
               Add to Blacklist
@@ -107,7 +114,8 @@ const TabCard = ({ data }: Props) => {
             <DeleteEntry
               id={id}
               className={cn(
-                " cursor-pointer opacity-60 mr-2 transition duration-200    text-foreground hover:!opacity-100 "
+                " cursor-pointer opacity-60 mr-2 transition duration-200    text-foreground hover:!opacity-100 ",
+                page === "device" && "hidden"
               )}
             />
           </div>
