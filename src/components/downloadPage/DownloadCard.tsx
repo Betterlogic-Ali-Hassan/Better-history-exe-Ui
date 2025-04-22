@@ -24,13 +24,12 @@ const DownloadCard = ({ data }: DownloadCardProps) => {
     <div
       className={cn(
         "p-6 border-border border group rounded-lg bg-card flex gap-5 mb-4 relative cursor-pointer max-sm:flex-col",
-        selected &&
-          "hover:bg-selected-hover border-selected-border bg-selected-bg"
+        selected && "hover:bg-badge  bg-badge"
       )}
       onClick={handleToggle}
     >
       <div className='h-[32px] w-[32px]'>
-        <img src={icon} alt={title} className='h-[32px] w-[32px] dark:invert' />
+        <img src={icon} alt={title} className='h-[32px] w-[32px] icon' />
       </div>
       <div className='grow flex sm:items-start justify-between max-sm:flex-col'>
         <div>

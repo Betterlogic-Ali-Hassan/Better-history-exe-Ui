@@ -5,7 +5,7 @@ import type React from "react";
 import { useEffect, useState, useRef } from "react";
 import { ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Button from "./ui/Button";
+import Button from "@/components/ui/Button";
 
 interface BackToTopContainerProps {
   threshold?: number;
@@ -20,7 +20,7 @@ export function BackToTopContainer({
   className,
   containerClassName,
   children,
-  height = "840px",
+  height = "900px",
 }: BackToTopContainerProps) {
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -52,11 +52,11 @@ export function BackToTopContainer({
   };
 
   return (
-    <>
+    <div className=' block lg:grid lg:col-span-2 lg:grid-cols-subgrid   overflow-y-auto no-scrollbar lg:overflow-y-scroll overflow-x-hidden grow pb-4 lg:pb-6 max-lg:pl-[100px] max-sm:pl-[80px] max-lg:pt-2'>
       <div
         ref={containerRef}
         className={cn(
-          "  no-scrollbar  lg:grid lg:col-span-2 lg:grid-cols-subgrid   overflow-y-auto no-scrollbar lg:overflow-y-scroll overflow-x-hidden grow pb-4 lg:pb-6 max-lg:pl-0 max-sm:pl-0 max-lg:pt-2 flex justify-end",
+          "  no-scrollbar block lg:grid lg:col-span-2 lg:grid-cols-subgrid   overflow-y-auto no-scrollbar lg:overflow-y-scroll overflow-x-hidden grow pb-4 lg:pb-6 max-lg:pl-0 max-sm:pl-0 max-lg:pt-2",
           containerClassName
         )}
         style={{ height }}
@@ -66,7 +66,7 @@ export function BackToTopContainer({
 
       <div
         className={cn(
-          "sticky bottom-4 right-0 w-full justify-end z-10  transition-all duration-300 ml-[80px] h-12 !flex items-center  !p-0 ",
+          "sticky bottom-4 right-0 w-full justify-end z-10  transition-all duration-300 ml-[80px] h-12 flex items-center  !p-0 ",
           isVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-10 pointer-events-none",
@@ -84,6 +84,6 @@ export function BackToTopContainer({
           </Button>
         </div>
       </div>
-    </>
+    </div>
   );
 }

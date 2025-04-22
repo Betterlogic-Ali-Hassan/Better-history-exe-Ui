@@ -9,7 +9,7 @@ import SuccessMessage from "./SuccessMessage";
 const BlackListDomains = () => {
   return (
     <div className='h-full overflow-y-auto no-scrollbar px-1 mt-2'>
-      <div className='bg-card p-6 rounded-lg'>
+      <div className='bg-border p-6 rounded-lg'>
         <Header />
         <BlockWebsiteTabs />
         <BlockedDomainsPanel />

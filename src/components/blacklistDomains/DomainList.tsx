@@ -63,11 +63,11 @@ export function DomainList({ allSelected }: { allSelected: boolean }) {
             />
             <img
               className='w-[16px] h-[16px] ml-2 mr-1 flex-none rounded-sm overflow-hidden'
-              src={`https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${domain.path}/&size=32`}
+              src={`https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.${domain.domain}/&size=32`}
               alt='img'
             />
             <div className='flex flex-wrap items-center gap-1.5  pr-8 '>
-              <span className='truncate text-sm font-medium text-text  max-w-[135px] sm:max-w-[150px]  capitalize '>
+              <span className='truncate text-sm font-medium text-text  max-w-[135px] sm:max-w-[150px]   '>
                 {domain.isRegex ? (
                   <code className='bg-badge  px-1 py-0.5 rounded text-text  font-mono transition-colors duration-300 ease-in-out'>
                     {domain.domain}

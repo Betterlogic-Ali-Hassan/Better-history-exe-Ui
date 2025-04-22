@@ -5,7 +5,7 @@ import { usePageContext } from "@/context/PageContext";
 import { Card } from "@/types/CardTypes";
 
 export function useHistoryItem(data: Card) {
-  const { id, path, tags, icon, title, des, date } = data;
+  const { id, path, tags, icon, title, des, date, time } = data;
   const { page } = usePageContext();
   const { toggleCard, showSelectionCard, selectedCards, toggleCategory } =
     useHistory();
@@ -33,5 +33,6 @@ export function useHistoryItem(data: Card) {
     toggleCategory,
     date,
     page,
+    time,
   };
 }

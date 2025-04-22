@@ -12,7 +12,6 @@ export interface BlacklistedDomain {
   blockType: "entire-domain" | "specific-path";
   dateAdded: Date;
   isRegex?: boolean;
-  path?: string;
 }
 type BlackListContextProps = {
   blockType: "entire-domain" | "specific-path";
@@ -52,6 +51,8 @@ type BlackListContextProps = {
   };
   handleDeleteDomain: () => void;
   openBulkDeleteDialog: () => void;
+  handleAddDomain: (customDomain?: string) => void;
+  clearAllDomains: () => void;
 };
 
 const BlackListContext = createContext<BlackListContextProps | undefined>(
@@ -69,8 +70,15 @@ export const BlackListContextProvider = ({
   const [newDomain, setNewDomain] = useState("");
   const [pathPattern, setPathPattern] = useState("");
   const [isValidDomain, setIsValidDomain] = useState(false);
-  const [blacklistedDomains, setBlacklistedDomains] =
-    useState<BlacklistedDomain[]>(domains);
+  const [blacklistedDomains, setBlacklistedDomains] = useState<
+    BlacklistedDomain[]
+  >(() => {
+    if (typeof window !== "undefined") {
+      const savedDomains = localStorage.getItem("blacklistedDomains");
+      return savedDomains ? JSON.parse(savedDomains) : domains;
+    }
+    return domains;
+  });
   const [showSuccess, setShowSuccess] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [includeSubdomains, setIncludeSubdomains] = useState(false);
@@ -159,23 +167,85 @@ export const BlackListContextProvider = ({
       .length,
   };
   const handleDeleteDomain = () => {
+    let updatedDomains;
+
     if (bulkDeleteMode) {
-      setBlacklistedDomains(
-        blacklistedDomains.filter(
-          (domain) => !selectedDomains.includes(domain.id)
-        )
+      updatedDomains = blacklistedDomains.filter(
+        (domain) => !selectedDomains.includes(domain.id)
       );
+      setBlacklistedDomains(updatedDomains);
       setSelectedDomains([]);
     } else if (domainToDelete) {
-      setBlacklistedDomains(
-        blacklistedDomains.filter((domain) => domain.id !== domainToDelete)
+      updatedDomains = blacklistedDomains.filter(
+        (domain) => domain.id !== domainToDelete
+      );
+      setBlacklistedDomains(updatedDomains);
+    }
+
+    if (updatedDomains) {
+      localStorage.setItem(
+        "blacklistedDomains",
+        JSON.stringify(updatedDomains)
       );
     }
+
     setDeleteDialogOpen(false);
+  };
+  const handleAddDomain = (customDomain?: string) => {
+    if (!newDomain && !customDomain) return;
+
+    // For specific path, validate that a path pattern is provided
+    if (blockType === "specific-path" && !pathPattern) {
+      alert("Please enter a path pattern (e.g., /maps/*)");
+      return;
+    }
+
+    // Check if it's a regex pattern
+    const regexSpecialChars = /[\^$[\]$${}?*+|\\]/;
+    const isRegex = regexSpecialChars.test(newDomain);
+    const domainValue = (customDomain && customDomain) || newDomain;
+
+    // Update the domain input placeholder and info text
+    const domainInput = document.getElementById(
+      "domain-input"
+    ) as HTMLInputElement;
+    if (domainInput) {
+      domainInput.placeholder = isRegex
+        ? "^example\\.(com|org)$"
+        : "example.com";
+    }
+
+    const newEntry: BlacklistedDomain = {
+      id: Date.now().toString(),
+      domain: domainValue,
+      includeSubdomains:
+        blockType === "entire-domain" ? includeSubdomains : false,
+      pathPattern: blockType === "specific-path" ? pathPattern : undefined,
+      blockType,
+      dateAdded: new Date(),
+      isRegex: isRegex,
+    };
+
+    const updatedDomains = [...blacklistedDomains, newEntry];
+    setBlacklistedDomains(updatedDomains);
+    localStorage.setItem("blacklistedDomains", JSON.stringify(updatedDomains));
+
+    setNewDomain("");
+    setPathPattern("");
+    setIncludeSubdomains(false);
+    setBlockType("entire-domain");
+    setIsValidDomain(false);
+
+    setShowSuccess(true);
+    setTimeout(() => setShowSuccess(false), 3000);
   };
   const openBulkDeleteDialog = () => {
     setBulkDeleteMode(true);
     setDeleteDialogOpen(true);
+  };
+  const clearAllDomains = () => {
+    setBlacklistedDomains([]);
+    localStorage.removeItem("blacklistedDomains");
   };
   return (
     <BlackListContext.Provider
@@ -212,6 +282,8 @@ export const BlackListContextProvider = ({
         setBlacklistedDomains,
         blacklistedDomains,
         validateDomain,
+        handleAddDomain,
+        clearAllDomains,
       }}
     >
       {children}
