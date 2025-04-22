@@ -28,7 +28,7 @@ const TopBar = () => {
       ) : (
         <TopNav categoriesData={categories} />
       )}
-      <DropDown />
+      {!searchActive && page === "search" ? <div></div> : <DropDown />}
     </>
   );
 };
