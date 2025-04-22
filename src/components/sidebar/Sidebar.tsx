@@ -17,7 +17,7 @@ const Sidebar = () => {
   return (
     <>
       <div className='fixed left-0 top-0 h-screen z-50 '>
-        <div className='relative flex h-full w-16 flex-1 flex-col items-center border-r border-border px-2 pt-8 bg-sidebar '>
+        <div className='relative flex h-full w-16 flex-1 flex-col items-center border-r border-border px-2 pl-0 pt-8 bg-sidebar '>
           <Logo />
           <span
             aria-hidden='true'

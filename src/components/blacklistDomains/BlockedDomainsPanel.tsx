@@ -124,7 +124,7 @@ const BlockedDomainsPanel = () => {
             !isValidDomain || (blockType === "specific-path" && !pathPattern)
           }
         >
-          <PlusCircle className='mr-1.5 h-5 w-5' />
+          <PlusCircle className='mr-1.5 h-4.5 w-4.5' />
           Add to Blacklist
         </Button>
         <BulkImportBtn />

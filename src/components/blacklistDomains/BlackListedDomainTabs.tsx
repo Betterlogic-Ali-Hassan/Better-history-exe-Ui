@@ -21,7 +21,7 @@ const BlackListedDomainTabs = () => {
             value='all'
             className={cn(
               "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-sm transition-colors duration-300 ease-in-out hover:bg-hover text-text",
-              activeTab === "all" && "bg-background "
+              activeTab === "all" && "!bg-hover "
             )}
           >
             <Layers className='!h-5 !w-5' />
@@ -35,7 +35,7 @@ const BlackListedDomainTabs = () => {
             value='exact'
             className={cn(
               "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-sm transition-colors duration-300 ease-in-out hover:bg-hover text-text",
-              activeTab === "exact" && "bg-background "
+              activeTab === "exact" && "!bg-hover "
             )}
           >
             <Globe className='!h-5 !w-5' />
@@ -49,7 +49,7 @@ const BlackListedDomainTabs = () => {
             value='subdomains'
             className={cn(
               "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-sm transition-colors duration-300 ease-in-out hover:bg-hover text-text",
-              activeTab === "subdomains" && "bg-background "
+              activeTab === "subdomains" && "!bg-hover "
             )}
           >
             <FolderTree className='!h-5 !w-5' />
@@ -63,7 +63,7 @@ const BlackListedDomainTabs = () => {
             value='paths'
             className={cn(
               "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-sm transition-colors duration-300 ease-in-out hover:bg-hover text-text",
-              activeTab === "paths" && "bg-background "
+              activeTab === "paths" && "!bg-hover"
             )}
           >
             <IoFilterOutline className='h-3 w-3' />

@@ -98,8 +98,7 @@ export function FeedbackForm() {
                             onClick={() => field.onChange(type)}
                             className={cn(
                               "px-4 py-2 rounded-md border text-sm transition bg-background text-text border-border cursor-pointer hover:bg-hover",
-                              field.value === type &&
-                                "bg-brand text-text-primary hover:bg-brand "
+                              field.value === type && "bg-hover text-text  "
                             )}
                           >
                             {type}

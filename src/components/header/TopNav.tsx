@@ -64,7 +64,7 @@ const TopNav = ({ className, categoriesData }: Props) => {
                 return (
                   <SwiperSlide className='max-w-fit' key={i}>
                     <Button
-                      className='h-8 px-4 py-0.5 mr-2 rounded-[20px] bg-brand text-text-primary hover:bg-brand-hover ring-0 relative group'
+                      className='h-8 px-4 py-0.5 mr-2 rounded-[20px] bg-card text-text hover:bg-hover ring-0 relative group'
                       key={i}
                       onClick={() => handleToggleCategory(categoryId)}
                     >
