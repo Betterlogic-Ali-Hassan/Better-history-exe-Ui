@@ -46,7 +46,7 @@ const SearchFilters = () => {
       {filters.map((filter, index) => (
         <Button
           onClick={() => handleFilters(filter.value)}
-          className='h-8 px-4 py-0.5 mr-2 rounded-[20px] text-text-primary hover:bg-hover  ring-0 relative group'
+          className='h-8 px-4 py-0.5 mr-2 rounded-[20px] text-text hover:bg-hover  ring-0 relative group'
           key={index}
         >
           {filter.label}

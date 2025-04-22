@@ -21,7 +21,7 @@ const BlackListedDomainTabs = () => {
             value='all'
             className={cn(
               "rounded-md cursor-pointer flex items-center justify-center gap-1.5 py-1.5 text-sm transition-colors duration-300 ease-in-out hover:bg-hover text-text",
-              activeTab === "all" && "!bg-hover "
+              activeTab === "all" && "!bg-badge "
             )}
           >
             <Layers className='!h-5 !w-5' />
