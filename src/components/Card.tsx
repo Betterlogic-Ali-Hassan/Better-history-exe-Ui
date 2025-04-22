@@ -6,8 +6,7 @@ import { Checkbox } from "./ui/checkbox";
 import Button from "./ui/Button";
 import { useBlackList } from "@/context/BlackListContext";
 import { toast } from "react-toastify";
-// import { useSearch } from "@/context/SearchFilterContext";
-// import { useHistory } from "@/context/HistoryContext";
+
 import { usePageContext } from "@/context/PageContext";
 
 interface Props {
@@ -26,8 +25,7 @@ const TabCard = ({ data }: Props) => {
     time,
   } = useHistoryItem(data);
   const { handleAddDomain } = useBlackList();
-  // const { setSearchActive } = useSearch();
-  // const { setSearchTerm } = useHistory();
+
   const { setPage } = usePageContext();
   const handleAddBlackListDomain = () => {
     const parsedUrl = new URL(path);
@@ -36,9 +34,7 @@ const TabCard = ({ data }: Props) => {
     toast.success("Domain added to blacklist");
   };
   const handleMoreSiteInfo = () => {
-    // setSearchActive(true);
     setPage("search");
-    // setSearchTerm(value);
   };
   return (
     <div
