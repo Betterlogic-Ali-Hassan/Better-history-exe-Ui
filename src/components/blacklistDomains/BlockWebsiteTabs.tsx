@@ -27,21 +27,11 @@ const BlockWebsiteTabs = () => {
           className='sr-only'
         />
         <div className='w-full flex items-center justify-center mb-1'>
-          <div
-            className={cn(
-              "p-1.5 rounded-full transition-colors duration-300 ease-in-out bg-background ",
-              blockType === "entire-domain" && "bg-badge "
-            )}
-          >
+          <div className='p-1.5 rounded-full transition-colors duration-300 ease-in-out bg-background '>
             <EntrieDomainIcon className='transition-colors duration-300 ease-in-out  ' />
           </div>
         </div>
-        <span
-          className={cn(
-            "text-sm font-medium transition-colors duration-300 ease-in-out text-foreground opacity-80",
-            blockType === "entire-domain" && "text-text "
-          )}
-        >
+        <span className='text-sm font-medium transition-colors duration-300 ease-in-out text-text'>
           Block Entire Domain
         </span>
         <span className='text-xs text-foreground opacity-70  mt-0.5 text-center transition-colors duration-300 ease-in-out'>
@@ -62,21 +52,11 @@ const BlockWebsiteTabs = () => {
           className='sr-only'
         />
         <div className='w-full flex items-center justify-center mb-1'>
-          <div
-            className={cn(
-              "p-1.5 rounded-full transition-colors duration-300 ease-in-out bg-background ",
-              blockType === "specific-path" && "bg-badge "
-            )}
-          >
+          <div className='p-1.5 rounded-full transition-colors duration-300 ease-in-out bg-background '>
             <RefreshIcon />
           </div>
         </div>
-        <span
-          className={cn(
-            "text-sm font-medium transition-colors duration-300 ease-in-out text-foreground opacity-80",
-            blockType === "specific-path" && "text-text "
-          )}
-        >
+        <span className='text-sm font-medium transition-colors duration-300 ease-in-out text-text '>
           Block Specific Path
         </span>
         <span className='text-xs text-foreground opacity-70 mt-0.5 text-center transition-colors duration-300 ease-in-out'>
