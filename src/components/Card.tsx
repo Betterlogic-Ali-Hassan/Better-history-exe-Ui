@@ -23,8 +23,7 @@ const TabCard = ({ data }: Props) => {
     <div
       className={cn(
         "  border-transparent hover:bg-hover overflow-x-auto no-scrollbar select-none bg-card  w-full relative border block rounded-md group",
-        selected &&
-          "hover:bg-selected-hover border-selected-border bg-selected-bg",
+        selected && " bg-hover",
         showSelectionCard && "cursor-pointer"
       )}
       onClick={handleToggle}

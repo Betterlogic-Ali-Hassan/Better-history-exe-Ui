@@ -436,7 +436,7 @@ export const activityData: Card[] = [
   {
     time: "3:30AM",
     date: "Thursday, 2025/04/10",
-    id: 43,
+    id: 49,
     icon: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.netflix.com/&size=32",
     title: "Netflix",
     path: "https://www.netflix.com/",
@@ -445,7 +445,7 @@ export const activityData: Card[] = [
   {
     time: "1:30AM",
     date: "Thursday, 2025/04/10",
-    id: 44,
+    id: 50,
     icon: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.netflix.com/&size=32",
     title: "Netflix",
     path: "https://www.netflix.com/",

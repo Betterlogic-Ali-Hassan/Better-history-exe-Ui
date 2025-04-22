@@ -19,6 +19,7 @@ import { Card } from "@/types/CardTypes";
 import { categoriesData } from "@/constant/categories";
 import { deviceData } from "@/constant/deviceData";
 import { filterCards } from "@/lib/search-filter";
+import { searchEngineData } from "@/constant/SearchEngineData";
 
 type HistoryContextType = {
   cards: Card[];
@@ -53,6 +54,7 @@ const STORAGE_KEYS = {
   downloads: "downloads_data",
   activity: "activity_data",
   device: "device_data",
+  search: "searchEngine_data",
 };
 
 const PIN_CATEGORIES_KEYS = {
@@ -63,6 +65,7 @@ const DEFAULT_DATA = {
   downloads: downloadData,
   activity: activityData,
   device: deviceData,
+  search: searchEngineData,
 };
 
 export const HistoryProvider = ({ children }: { children: ReactNode }) => {

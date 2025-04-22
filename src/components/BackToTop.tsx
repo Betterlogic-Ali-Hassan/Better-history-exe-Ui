@@ -20,7 +20,7 @@ export function BackToTopContainer({
   className,
   containerClassName,
   children,
-  height = "900px",
+  height = "840px",
 }: BackToTopContainerProps) {
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
